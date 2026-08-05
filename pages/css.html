@@ -1,0 +1,442 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>css</title>
+</head>
+
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <span class="header-icon">
+        <img src="../icons/code.svg" alt="">
+      </span>
+      <div class="header-text">
+        <span class="header-label">Portfólio</span>
+        <h1>Template</h1>
+      </div>
+    </div>
+    <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
+  </div>
+</header>
+
+<section class="bg">
+  <div class="capa">
+    <div class="imagem-card">
+      <img class="card-logo" src="../imgs/blue.webp" alt="">
+    </div>
+    <img class="icon-banner" src="../icons/css.svg" alt="">
+  </div>
+</section>
+
+<section class="content bg">
+  <div class="sidebar">
+    <h1>Filtros</h1>
+
+    <nav class="sidebar-nav">
+      <a href="#reset">Reset Global</a>
+      <a href="#display">Display inline e block</a>
+      <a href="#grid">Display grid</a>
+    </nav>
+  </div>
+
+
+  <div class="conteudo-area">
+    <div class="conteudo" id="reset">
+      <h1>Reset Global</h1>
+      <p>Reset CSS global do projeto.</p>
+
+      <div class="code-block code-block--css">
+        <div class="code-block__header">
+          <span class="code-block__lang">CSS</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-css">* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(sua cor de fundo);
+  font-family: "Sua fonte";
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+blockquote,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+img[src$=".webp"] {
+  border-radius: 4px;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="conteudo" id="display">
+      <h1>Display inline e block</h1>
+      <p>O display inline e block são dois tipos de display que podem ser usados para controlar como um elemento é exibido na página. O display inline é usado para exibir um elemento como uma linha, enquanto o display block é usado para exibir um elemento como um bloco. O display inline-block é usado para exibir um elemento como um bloco, mas com a possibilidade de ser inline.</p>
+      <div class="exemplo">
+        <h2>Display inline</h2>
+        <div class="caixa-exemplo">
+          <p class="inline">Inline</p>
+          <p class="inline-block">Inline block</p>
+          <p class="block">Block</p>
+        </div>
+      </div>
+      <div class="code-block code-block--css">
+        <div class="code-block__header">
+          <span class="code-block__lang">CSS</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-css">.inline {
+  display: inline;
+  border: 1px solid red;
+  margin: 4px;
+}
+.inline-block {
+  display: inline-block;
+  border: 1px solid red;
+  margin: 4px;
+}
+.block {
+  display: block;
+  border: 1px solid red;
+  margin: 4px;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="conteudo" id="grid">
+      <h1>Display grid</h1>
+      <p>Demonstrações visuais das propriedades de CSS Grid.</p>
+
+      <div class="exemplo">
+        <h2>grid-template: columns | rows</h2>
+
+        <h2>gap</h2>
+        <div class="caixa-exemplo g-row">
+          <div class="g-item" data-label="10px" data-grid="g-grid--3x3 g-grid--gap-10" data-n="9"></div>
+          <div class="g-item" data-label="5px 10px" data-grid="g-grid--3x3 g-grid--gap-5-10" data-n="9"></div>
+        </div>
+
+        <h2>grid-template-columns</h2>
+        <div class="caixa-exemplo g-row">
+          <div class="g-item" data-label="1fr 1fr 1fr" data-grid="g-grid--3col" data-n="3"></div>
+          <div class="g-item" data-label="auto auto" data-grid="g-grid--cols-auto" data-fill="a:g-dots:2,a:g-dots:3"></div>
+          <div class="g-item" data-label="repeat(4, 1fr)" data-grid="g-grid--4col" data-n="4"></div>
+          <div class="g-item" data-label="min-content max-content 1fr" data-grid="g-grid--cols-minmax" data-fill="a:g-dots:1,a:g-dots--nowrap:4,c"></div>
+        </div>
+
+        <h2>grid-template-rows</h2>
+        <div class="caixa-exemplo g-row">
+          <div class="g-item" data-label="1fr 1fr" data-grid="g-grid--rows-2" data-n="2"></div>
+          <div class="g-item" data-label="repeat(3, 10px)" data-grid="g-grid--rows-3-10px" data-n="3"></div>
+          <div class="g-item" data-label="10px auto 10px" data-grid="g-grid--rows-10-auto" data-fill="c,a:g-dots:3,c"></div>
+        </div>
+      </div>
+
+      <div class="exemplo">
+        <h2>grid: column | row</h2>
+
+        <h2>grid-column</h2>
+        <div class="caixa-exemplo g-row">
+          <div class="g-item" data-label="2 / 4" data-grid="g-grid--4col g-grid--short" data-fill="m,a:g-cell--c-2-4,m"></div>
+          <div class="g-item" data-label="1 / -1" data-grid="g-grid--4col g-grid--short" data-fill="a:g-cell--c-1--1"></div>
+          <div class="g-item" data-label="3" data-grid="g-grid--4col g-grid--short" data-fill="m,m,a:g-cell--c-3,m"></div>
+          <div class="g-item" data-label="span 3" data-grid="g-grid--4col g-grid--short" data-fill="a:g-cell--c-span-3,m"></div>
+        </div>
+
+        <h2>grid-row</h2>
+        <div class="caixa-exemplo g-row">
+          <div class="g-item" data-label="2" data-grid="g-grid--3x3-sm" data-n="9" data-muted-all data-active="4:g-cell--r-2"></div>
+          <div class="g-item" data-label="2 / 5" data-grid="g-grid--row-4" data-fill="m,a:g-cell--r-2-5"></div>
+          <div class="g-item" data-label="3" data-grid="g-grid--row-4" data-fill="m,m,a:g-cell--r-3,m"></div>
+          <div class="g-item" data-label="span 2" data-grid="g-grid--row-4" data-fill="a:g-cell--r-span-2,m,m"></div>
+        </div>
+
+        <h2>grid-area</h2>
+        <div class="caixa-exemplo g-row">
+          <div class="g-item" data-label="2 / 3" data-grid="g-grid--3x3-sm" data-n="9" data-muted-all data-active="4:g-cell--a-2-3"></div>
+          <div class="g-item" data-label="3 / 2" data-grid="g-grid--3x3-sm" data-n="9" data-muted-all data-active="4:g-cell--a-3-2"></div>
+        </div>
+      </div>
+
+      <div class="exemplo">
+        <h2>align-content | justify-content</h2>
+        <p class="g-props">align-content · justify-content · place-content</p>
+        <div class="caixa-exemplo g-row g-row--sm">
+          <div class="g-item" data-label="start" data-grid="g-grid--align g-grid--ac-start" data-n="6"></div>
+          <div class="g-item" data-label="center" data-grid="g-grid--align g-grid--ac-center" data-n="6"></div>
+          <div class="g-item" data-label="end" data-grid="g-grid--align g-grid--ac-end" data-n="6"></div>
+          <div class="g-item" data-label="stretch" data-grid="g-grid--align-stretch" data-n="6"></div>
+          <div class="g-item" data-label="space-between" data-grid="g-grid--align-2x2 g-grid--ac-between" data-n="6"></div>
+          <div class="g-item" data-label="space-around" data-grid="g-grid--align-2x2 g-grid--ac-around" data-n="6"></div>
+          <div class="g-item" data-label="space-evenly" data-grid="g-grid--align-2x2 g-grid--ac-evenly" data-n="6"></div>
+        </div>
+      </div>
+
+      <div class="exemplo">
+        <h2>align-items | justify-items</h2>
+        <p class="g-props">align-items · justify-items · place-items</p>
+        <div class="caixa-exemplo g-row g-row--sm">
+          <div class="g-item" data-label="start" data-grid="g-grid--items g-grid--ai-start" data-n="4" data-cell="g-cell--sm"></div>
+          <div class="g-item" data-label="center" data-grid="g-grid--items g-grid--ai-center" data-n="4" data-cell="g-cell--sm"></div>
+          <div class="g-item" data-label="end" data-grid="g-grid--items g-grid--ai-end" data-n="4" data-cell="g-cell--sm"></div>
+          <div class="g-item" data-label="stretch" data-grid="g-grid--items g-grid--ai-stretch" data-n="4"></div>
+        </div>
+      </div>
+
+      <div class="exemplo">
+        <h2>align-self | justify-self</h2>
+        <p class="g-props">align-self · justify-self · place-self</p>
+        <div class="caixa-exemplo g-row g-row--sm">
+          <div class="g-item" data-label="start" data-grid="g-grid--self" data-n="4" data-muted-all data-active="0:g-cell--sm g-cell--self-start"></div>
+          <div class="g-item" data-label="center" data-grid="g-grid--self" data-n="4" data-muted-all data-active="0:g-cell--sm g-cell--self-center"></div>
+          <div class="g-item" data-label="end" data-grid="g-grid--self" data-n="4" data-muted-all data-active="0:g-cell--sm g-cell--self-end"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+  .inline {
+    display: inline;
+    border: 1px solid red;
+    margin: 4px;
+  }
+
+  .inline-block {
+    display: inline-block;
+    border: 1px solid red;
+    margin: 4px;
+  }
+
+  .block {
+    display: block;
+    border: 1px solid red;
+    margin: 4px;
+  }
+
+  .g-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    background: var(--a2);
+  }
+
+  .g-row--sm {
+    gap: 20px;
+  }
+
+  .g-item {
+    text-align: center;
+  }
+
+  .g-label {
+    font-family: monospace;
+    font-size: 12px;
+    color: var(--b0);
+    margin-bottom: 8px;
+  }
+
+  .g-props {
+    font-size: 14px;
+    color: var(--b3);
+    margin-bottom: 12px;
+  }
+
+  .g-grid {
+    display: grid;
+    gap: 4px;
+    border: 1px solid var(--b2);
+    padding: 6px;
+  }
+
+  .g-cell {
+    background: #0099ff66;
+    border: 1px solid var(--blue);
+  }
+
+  .g-cell--muted {
+    background: #0099ff33;
+    border: 1px solid var(--b2);
+  }
+
+  .g-cell--sm {
+    width: 20px;
+    height: 14px;
+  }
+
+  .g-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 4px;
+  }
+
+  .g-dots--nowrap {
+    white-space: nowrap;
+  }
+
+  .g-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--b0);
+    border-radius: 50%;
+    display: block;
+  }
+
+  .g-grid--3x3,
+  .g-grid--3x3-sm {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .g-grid--3x3 { width: 110px; height: 70px; }
+  .g-grid--3x3-sm { width: 80px; height: 80px; }
+
+  .g-grid--gap-10 { gap: 10px; }
+  .g-grid--gap-5-10 { gap: 5px 10px; }
+
+  .g-grid--3col,
+  .g-grid--4col {
+    width: 120px;
+    height: 50px;
+  }
+
+  .g-grid--3col { grid-template-columns: repeat(3, 1fr); }
+
+  .g-grid--4col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .g-grid--4col.g-grid--short { height: 40px; }
+
+  .g-grid--cols-auto {
+    grid-template-columns: auto auto;
+    width: 120px;
+    height: 50px;
+  }
+
+  .g-grid--cols-minmax {
+    grid-template-columns: min-content max-content 1fr;
+    width: 140px;
+    height: 50px;
+  }
+
+  .g-grid--rows-2 {
+    grid-template-rows: 1fr 1fr;
+    width: 80px;
+    height: 80px;
+  }
+
+  .g-grid--rows-3-10px {
+    grid-template-rows: repeat(3, 10px);
+    align-content: start;
+    width: 80px;
+    height: 80px;
+  }
+
+  .g-grid--rows-10-auto {
+    grid-template-rows: 10px auto 10px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .g-grid--row-4 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    width: 50px;
+    height: 90px;
+  }
+
+  .g-grid--align,
+  .g-grid--align-2x2,
+  .g-grid--align-stretch,
+  .g-grid--items,
+  .g-grid--self {
+    width: 90px;
+    height: 90px;
+  }
+
+  .g-grid--align {
+    grid-template-columns: repeat(3, 18px);
+    grid-template-rows: repeat(3, 14px);
+  }
+
+  .g-grid--align-2x2 {
+    grid-template-columns: repeat(3, 18px);
+    grid-template-rows: repeat(2, 14px);
+  }
+
+  .g-grid--align-stretch {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-content: stretch;
+    justify-content: stretch;
+  }
+
+  .g-grid--items,
+  .g-grid--self {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .g-grid--ac-start,
+  .g-grid--ac-center,
+  .g-grid--ac-end { gap: 4px; }
+
+  .g-grid--ac-start { align-content: start; justify-content: start; }
+  .g-grid--ac-center { align-content: center; justify-content: center; }
+  .g-grid--ac-end { align-content: end; justify-content: end; }
+  .g-grid--ac-between { align-content: space-between; justify-content: space-between; gap: 0; }
+  .g-grid--ac-around { align-content: space-around; justify-content: space-around; gap: 0; }
+  .g-grid--ac-evenly { align-content: space-evenly; justify-content: space-evenly; gap: 0; }
+
+  .g-grid--ai-start { align-items: start; justify-items: start; }
+  .g-grid--ai-center { align-items: center; justify-items: center; }
+  .g-grid--ai-end { align-items: end; justify-items: end; }
+  .g-grid--ai-stretch { align-items: stretch; justify-items: stretch; }
+
+  .g-cell--c-2-4 { grid-column: 2 / 4; }
+  .g-cell--c-1--1 { grid-column: 1 / -1; }
+  .g-cell--c-3 { grid-column: 3; }
+  .g-cell--c-span-3 { grid-column: span 3; }
+  .g-cell--r-2 { grid-row: 2; grid-column: 2; }
+  .g-cell--r-2-5 { grid-row: 2 / 5; }
+  .g-cell--r-3 { grid-row: 3; }
+  .g-cell--r-span-2 { grid-row: span 2; }
+  .g-cell--a-2-3 { grid-area: 2 / 3; }
+  .g-cell--a-3-2 { grid-area: 3 / 2; }
+  .g-cell--self-start { align-self: start; justify-self: start; }
+  .g-cell--self-center { align-self: center; justify-self: center; }
+  .g-cell--self-end { align-self: end; justify-self: end; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="../js/code.js"></script>
+<script src="../js/grid-demo.js"></script>
+
+</html>

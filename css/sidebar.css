@@ -1,0 +1,92 @@
+.sidebar {
+  background: var(--gradient1);
+  grid-area: a;
+  border-radius: 16px;
+  padding: 24px;
+  color: var(--b0);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  height: fit-content;
+  position: sticky;
+  top: calc(var(--header-height) + 12px);
+}
+
+.sidebar h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  letter-spacing: -1px;
+  color: var(--p1);
+  text-transform: uppercase;
+}
+
+.sidebar > p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--b2);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-nav a {
+  color: var(--b0);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.sidebar-nav a:hover {
+  background-color: var(--a2);
+}
+
+.sidebar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sidebar-tags span {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background-color: var(--a2);
+  color: var(--b2);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    padding: 16px;
+    margin-top: 12px;
+    gap: 12px;
+    border-radius: 12px;
+  }
+  .sidebar h1 {
+    font-size: 20px;
+  }
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 14px;
+    gap: 10px;
+  }
+  .sidebar h1 {
+    font-size: 18px;
+  }
+  .sidebar > p {
+    font-size: 13px;
+  }
+}

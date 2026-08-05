@@ -1,0 +1,125 @@
+.header {
+  position: fixed;
+  top: 8px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding: 0 24px;
+  pointer-events: none;
+}
+
+.header-inner {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1150px;
+  padding: 8px 8px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background-color: var(--b0);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--a2);
+}
+
+.header-icon img {
+  width: 18px;
+}
+
+.header-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  color: var(--b3);
+  margin-bottom: 1px;
+}
+
+.header h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: var(--a2);
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 60px;
+  }
+
+  .header {
+    padding: 0 16px;
+  }
+
+  .header-inner {
+    padding: 8px 8px;
+  }
+
+  .header h1 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  :root {
+    --header-height: 56px;
+  }
+
+  .header {
+    padding: 0 12px;
+  }
+
+  .header-inner {
+    padding: 8px 12px;
+    border-radius: 12px;
+  }
+
+  .header-brand {
+    gap: 10px;
+  }
+
+  .header-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .header-icon img {
+    width: 16px;
+  }
+
+  .header h1 {
+    font-size: 15px;
+  }
+
+  .header-label {
+    font-size: 9px;
+  }
+}

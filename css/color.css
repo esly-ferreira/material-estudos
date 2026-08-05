@@ -1,0 +1,15 @@
+:root {
+  --p1: #cbff33;
+  --p2: #4fbf07;
+  --b0: #fff;
+  --b1: #f8f8f8;
+  --b2: #aeaeae;
+  --b3: #717171;
+  --a1: #161616;
+  --a2: #272727;
+  --gradient1: linear-gradient(to right, var(--a1), var(--a2));
+  --gradient2: linear-gradient(to bottom, var(--b1), var(--b0));
+  --gradient3: linear-gradient(1060deg, var(--p1), var(--p2));
+  --header-height: 64px;
+  --blue: #0099ff;
+}

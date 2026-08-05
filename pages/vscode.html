@@ -1,0 +1,115 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>css</title>
+</head>
+
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <span class="header-icon">
+        <img src="../icons/code.svg" alt="">
+      </span>
+      <div class="header-text">
+        <span class="header-label">Portfólio</span>
+        <h1>Template</h1>
+      </div>
+    </div>
+    <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
+  </div>
+</header>
+
+<section class="bg">
+  <div class="capa">
+    <div class="imagem-card">
+      <img class="card-logo" src="../imgs/green.webp" alt="">
+    </div>
+    <img class="icon-banner" src="../icons/vscode.svg" alt="">
+  </div>
+</section>
+
+<section class="content bg">
+  <div class="sidebar">
+    <h1>Filtros</h1>
+    <nav class="sidebar-nav">
+      <a href="#plugins">Plugins</a>
+      <a href="#config">Config JSON</a>
+      <a href="#extensions">Extensões</a>
+    </nav>
+  </div>
+
+  <div class="conteudo-area">
+    <div class="conteudo" id="plugins">
+      <h1>Plugins</h1>
+      <a href="https://marketplace.visualstudio.com/items?itemName=origamid.origamid-next" target="_blank">Tema origamid</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank">Formatação</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live Server</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme" target="_blank">Material Icon Theme</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview" target="_blank">Image Preview</a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner" target="_blank">Code Runner</a>
+    </div>
+
+    <div class="conteudo" id="config">
+      <h1>Config JSON</h1>
+      <p>Arquivo de configuração do VS Code.</p>
+
+      <div class="code-block code-block--json">
+        <div class="code-block__header">
+          <span class="code-block__lang">JSON</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-json">{
+  "workbench.colorTheme": "Origamid Next",
+  "files.autoSave": "afterDelay",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 1.75,
+  "editor.tabSize": 2,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.wordWrap": "on",
+  "editor.minimap.renderCharacters": false,
+  "telemetry.telemetryLevel": "off",
+  "security.workspace.trust.untrustedFiles": "open",
+  "breadcrumbs.filePath": "off",
+  "outline.icons": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "editor.formatOnSave": true,
+  "html.format.wrapAttributes": "auto",
+  "html.format.wrapLineLength": 0,
+  "html.autoClosingTags": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.bracketPairColorization.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "git.openRepositoryInParentFolders": "always",
+  "explorer.confirmDelete": false,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "explorer.confirmPasteNative": false,
+  "explorer.confirmDragAndDrop": false,
+  "amazonQ.suppressPrompts": {
+    "amazonQChatDisclaimer": true
+  },
+  "cSpell.userWords": ["nomecompleto"],
+  "git.suggestSmartCommit": false
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="conteudo" id="extensions">
+      <h1>Extensões</h1>
+      <a href="https://chromewebstore.google.com/detail/json-pretty/nflbalmkceonkkhifbifebanhladdgcp" target="_blank">JSON Pretty</a>
+    </div>
+
+  </div>
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="../js/code.js"></script>
+
+</html>

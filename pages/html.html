@@ -1,0 +1,348 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>html</title>
+</head>
+
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <span class="header-icon">
+        <img src="../icons/code.svg" alt="">
+      </span>
+      <div class="header-text">
+        <span class="header-label">Portfólio</span>
+        <h1>Template</h1>
+      </div>
+    </div>
+    <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
+  </div>
+</header>
+
+<section class="bg">
+  <div class="capa">
+    <div class="imagem-card">
+      <img class="card-logo" src="../imgs/orange.webp" alt="">
+    </div>
+    <img class="icon-banner" src="../icons/html.svg" alt="">
+  </div>
+</section>
+
+<section class="content bg">
+  <div class="sidebar">
+    <h1>Filtros</h1>
+    <nav class="sidebar-nav">
+      <a href="#estrutura">Estrutura do documento</a>
+      <a href="#mapa">Mapa visual</a>
+      <a href="#semantica">Tags semânticas</a>
+      <a href="#conteudo">Tags de conteúdo</a>
+      <a href="#formulario">Formulário</a>
+      <a href="#midia">Mídia e tabelas</a>
+    </nav>
+  </div>
+
+  <div class="conteudo-area">
+
+    <div class="conteudo" id="mapa">
+      <h1>Mapa visual</h1>
+      <p>Mini tela mostrando onde cada tag semântica costuma ficar na página.</p>
+
+      <div class="exemplo">
+        <div class="caixa-exemplo h-wire">
+          <div class="">
+            <span class="h-wire__label">&lt;html&gt;</span>
+
+            <div class="h-wire__head">
+              <span class="h-wire__label">&lt;head&gt;</span>
+              <div class="h-wire__chips">
+                <span>&lt;title&gt;</span>
+                <span>&lt;meta&gt;</span>
+                <span>&lt;link&gt;</span>
+                <span>&lt;style&gt;</span>
+                <span>&lt;script&gt;</span>
+              </div>
+            </div>
+
+            <div class="h-wire__body">
+              <span class="h-wire__label">&lt;body&gt;</span>
+
+              <div class="h-wire__block h-wire__block--header">
+                <span>&lt;header&gt;</span>
+                <small>logo · navegação principal</small>
+              </div>
+
+              <div class="h-wire__block h-wire__block--nav">
+                <span>&lt;nav&gt;</span>
+                <small>menu · links</small>
+              </div>
+
+              <div class="h-wire__block h-wire__block--hero">
+                <span>&lt;section&gt; hero</span>
+                <small>banner · chamada principal</small>
+              </div>
+
+              <div class="h-wire__layout">
+                <aside class="h-wire__block h-wire__block--aside">
+                  <span>&lt;aside&gt;</span>
+                  <small>sidebar · filtros</small>
+                </aside>
+
+                <main class="h-wire__block h-wire__block--main">
+                  <span>&lt;main&gt;</span>
+
+                  <section class="h-wire__block h-wire__block--section">
+                    <span>&lt;section&gt;</span>
+
+                    <article class="h-wire__block h-wire__block--article">
+                      <span>&lt;article&gt;</span>
+                      <header class="h-wire__mini"><span>&lt;header&gt;</span></header>
+                      <div class="h-wire__mini"><span>&lt;p&gt;</span> · <span>&lt;img&gt;</span></div>
+                      <footer class="h-wire__mini"><span>&lt;footer&gt;</span></footer>
+                    </article>
+
+                    <article class="h-wire__block h-wire__block--article h-wire__block--dim">
+                      <span>&lt;article&gt;</span>
+                    </article>
+                  </section>
+
+                  <section class="h-wire__block h-wire__block--section h-wire__block--dim">
+                    <span>&lt;section&gt;</span>
+                  </section>
+                </main>
+              </div>
+
+              <div class="h-wire__block h-wire__block--search">
+                <span>&lt;search&gt;</span>
+                <small>busca do site</small>
+              </div>
+
+              <div class="h-wire__block h-wire__block--footer">
+                <span>&lt;footer&gt;</span>
+                <small>rodapé · copyright · links</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="semantica">
+      <h1>Tags semânticas</h1>
+      <p>Estrutura e significado das regiões da página.</p>
+      <div class="h-tags"></div>
+    </div>
+
+    <div class="conteudo" id="conteudo">
+      <h1>Tags de conteúdo</h1>
+      <p>Texto, listas, citações e elementos inline.</p>
+      <div class="h-tags"></div>
+    </div>
+
+    <div class="conteudo" id="formulario">
+      <h1>Formulário</h1>
+      <p>Coleta e envio de dados do usuário.</p>
+      <div class="h-tags"></div>
+    </div>
+
+    <div class="conteudo" id="midia">
+      <h1>Mídia e tabelas</h1>
+      <p>Imagens, áudio, vídeo e dados tabulares.</p>
+      <div class="h-tags"></div>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  .h-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .h-tag {
+    flex: 1 1 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: start;
+    padding: 12px 16px;
+    border-radius: 16px;
+    background: var(--b1);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .h-tag::before {
+    content: "<" attr(data-tag) ">";
+    font-size: 16px;
+    font-weight: 600;
+    color: #e44d26;
+    background: #e44d2618;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #e44d2630;
+    white-space: nowrap;
+  }
+
+  .h-tag p {
+    font-size: 12px;
+    color: var(--b3);
+    line-height: 1.5;
+  }
+
+  .h-wire {
+    background: var(--a2);
+    padding: 16px;
+    overflow-x: auto;
+  }
+
+  .h-wire__html,
+  .h-wire__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .h-wire__label {
+    font-size: 16px;
+    color: #e44d26;
+  }
+
+  .h-wire__head {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #2a2018;
+    border: 1px solid #e44d2640;
+    margin: 12px;
+  }
+
+  .h-wire__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+  }
+
+  .h-wire__chips span,
+  .h-wire__block span,
+  .h-wire__mini span {
+    font-size: 12px;
+    color: var(--b0);
+  }
+
+  .h-wire__chips span {
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: #ff330022;
+    color: #ffb899;
+    
+  }
+
+  .h-wire__body {
+    padding: 10px;
+    border-radius: 8px;
+    background: var(--a1);
+    border: 1px solid var(--a1);
+    margin: 12px;
+  }
+
+  .h-wire__block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  .h-wire__block small {
+    font-size: 12px;
+    color: var(--b2);
+  }
+
+  .h-wire__block--header {
+    background: var(--a2);
+  }
+
+  .h-wire__block--nav {
+    background: var(--a2);
+  }
+
+  .h-wire__block--hero {
+    background: var(--a2);
+  }
+
+  .h-wire__block--aside {
+    background: var(--a2);
+  }
+
+  .h-wire__block--main {
+    background: var(--a2);
+    flex: 1;
+    gap: 8px;
+  }
+
+  .h-wire__block--section {
+    background: #ffffff10;
+    border-color: #ffffff30;
+    gap: 8px;
+  }
+
+  .h-wire__block--article {
+    background: var(--a2);
+    gap: 8px;
+  }
+
+  .h-wire__block--search {
+    background: var(--a2);
+  }
+
+  .h-wire__block--footer {
+    background: var(--a2);
+  }
+
+  .h-wire__block--dim {
+    opacity: 0.55;
+    min-height: 28px;
+  }
+
+  .h-wire__layout {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 8px;
+  }
+
+  .h-wire__mini {
+    padding: 5px 8px;
+    border-radius: 4px;
+    background: #00000033;
+    font-size: 10px;
+    color: #ffffff88;
+  }
+
+  @media (max-width: 768px) {
+    .h-tag {
+      grid-template-columns: 1fr;
+    }
+
+    .h-wire__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .h-wire__block--aside {
+      min-height: 60px;
+    }
+  }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="../js/code.js"></script>
+<script src="../js/html-tags.js"></script>
+
+</html>
