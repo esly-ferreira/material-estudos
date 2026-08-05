@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html.page-transition-pending {
+      overflow: hidden;
+      height: 100%;
+      filter: blur(12px);
+      opacity: 0
+    }
+  </style>
+  <script>document.documentElement.classList.add("page-transition-pending")</script>
   <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <title>css</title>
 </head>
 
@@ -11,12 +21,13 @@
 <header class="header">
   <div class="header-inner">
     <div class="header-brand">
-      <span class="header-icon">
-        <img src="../icons/code.svg" alt="">
-      </span>
+      <a href="../index.html" class="header-logo-link">
+        <span class="header-icon">
+          <img src="../imgs/logo.svg" alt="Logo">
+        </span>
+      </a>
       <div class="header-text">
-        <span class="header-label">Portfólio</span>
-        <h1>Template</h1>
+        <h1>Material <span class="header-title-muted">de Estudo</span></h1>
       </div>
     </div>
     <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
@@ -40,6 +51,8 @@
       <a href="#reset">Reset Global</a>
       <a href="#display">Display inline e block</a>
       <a href="#grid">Display grid</a>
+      <a href="#pseudo-classes">Pseudo-classes</a>
+      <a href="#seletores">Seletores</a>
     </nav>
   </div>
 
@@ -53,26 +66,49 @@
         <div class="code-block__header">
           <span class="code-block__lang">CSS</span>
         </div>
-        <pre class="code-block__pre"><code class="language-css">* {
+        <pre class="code-block__pre"><code class="language-css">
+* {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   width: 100%;
   height: 100vh;
-  background-color: var(sua cor de fundo);
-  font-family: "Sua fonte";
   position: relative;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
 }
 
 ul {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 h1,
@@ -85,10 +121,8 @@ dd {
   margin: 0;
   padding: 0;
 }
-
-img[src$=".webp"] {
-  border-radius: 4px;
-}</code></pre>
+          
+          </code></pre>
       </div>
     </div>
 
@@ -216,6 +250,201 @@ img[src$=".webp"] {
       </div>
     </div>
 
+    <div class="conteudo" id="pseudo-classes">
+      <h1>Pseudo-classes</h1>
+      <p>Estados especiais de um elemento, sem precisar adicionar classes no HTML.</p>
+
+      <div class="exemplo">
+        <h2>:focus</h2>
+        <p>Elemento em foco, usando o teclado (Tab).</p>
+        <div class="caixa-exemplo">
+          <a href="#pseudo-classes" class="pse-link">Navegue com Tab</a>
+        </div>
+      </div>
+
+      <div class="exemplo">
+        <h2>:active</h2>
+        <p>Quando clicamos no elemento.</p>
+        <div class="caixa-exemplo">
+          <a href="#pseudo-classes" class="pse-link">Clique e segure</a>
+        </div>
+      </div>
+
+      <div class="exemplo">
+        <h2>:visited</h2>
+        <p>Para links que já foram visitados.</p>
+        <div class="caixa-exemplo">
+          <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/:visited" class="pse-link" target="_blank" rel="noopener noreferrer">Link externo (visite e volte)</a>
+        </div>
+      </div>
+
+      <div class="code-block code-block--css">
+        <div class="code-block__header">
+          <span class="code-block__lang">CSS</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-css">a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-family: Arial;
+  text-decoration: none;
+  background: #caf;
+  color: #217;
+}
+
+a:focus {
+  outline: 3px solid #217;
+  outline-offset: 4px;
+}
+
+a:active {
+  background: #217;
+  color: #caf;
+}
+
+a:visited {
+  background: #acf;
+  color: #512;
+}</code></pre>
+      </div>
+    </div>
+
+    <div class="conteudo" id="seletores">
+      <h1>Seletores</h1>
+      <p>Seletores estruturais para escolher elementos pela posição na lista.</p>
+
+      <div class="exemplo">
+        <h2>:first-child</h2>
+        <p>Seleciona o primeiro elemento.</p>
+        <div class="caixa-exemplo">
+          <ul class="pse-lista lista-1">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exemplo">
+        <h2>:last-child</h2>
+        <p>Seleciona o último elemento.</p>
+        <div class="caixa-exemplo">
+          <ul class="pse-lista lista-1">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exemplo">
+        <h2>:nth-child</h2>
+        <p><code>4</code> (quarto elemento), <code>even</code> (pares), <code>odd</code> (ímpares), <code>3n</code> (de 3 em 3).</p>
+        <div class="caixa-exemplo pse-nth-demo">
+          <div>
+            <p class="pse-nth-label">:nth-child(4)</p>
+            <ul class="pse-lista lista-2">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+            </ul>
+          </div>
+          <div>
+            <p class="pse-nth-label">:nth-child(even)</p>
+            <ul class="pse-lista lista-3">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+            </ul>
+          </div>
+          <div>
+            <p class="pse-nth-label">:nth-child(odd)</p>
+            <ul class="pse-lista lista-4">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+            </ul>
+          </div>
+          <div>
+            <p class="pse-nth-label">:nth-child(3n)</p>
+            <ul class="pse-lista lista-5">
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-block code-block--css">
+        <div class="code-block__header">
+          <span class="code-block__lang">CSS</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-css">/* primeiro elemento */
+.lista-1 li:first-child {
+  background: #caf;
+}
+
+/* último elemento */
+.lista-1 li:last-child {
+  background: #cfa;
+}
+
+/* quarto elemento */
+.lista-2 li:nth-child(4) {
+  background: #caf;
+}
+
+/* pares */
+.lista-3 li:nth-child(even) {
+  background: #caf;
+}
+
+/* ímpares */
+.lista-4 li:nth-child(odd) {
+  background: #caf;
+}
+
+/* de 3 em 3 */
+.lista-5 li:nth-child(3n) {
+  background: #caf;
+}</code></pre>
+      </div>
+
+      <div class="exemplo">
+        <h2>:not</h2>
+        <p>O <code>:not</code> nega a seleção de um elemento específico.</p>
+        <div class="caixa-exemplo">
+          <ul class="pse-lista lista-6">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="code-block code-block--css">
+        <div class="code-block__header">
+          <span class="code-block__lang">CSS</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-css">.lista-6 li:not(:last-child) {
+  border-bottom: 2px solid #217;
+}</code></pre>
+      </div>
+    </div>
+
   </div>
 
 </section>
@@ -315,11 +544,23 @@ img[src$=".webp"] {
     grid-template-rows: repeat(3, 1fr);
   }
 
-  .g-grid--3x3 { width: 110px; height: 70px; }
-  .g-grid--3x3-sm { width: 80px; height: 80px; }
+  .g-grid--3x3 {
+    width: 110px;
+    height: 70px;
+  }
 
-  .g-grid--gap-10 { gap: 10px; }
-  .g-grid--gap-5-10 { gap: 5px 10px; }
+  .g-grid--3x3-sm {
+    width: 80px;
+    height: 80px;
+  }
+
+  .g-grid--gap-10 {
+    gap: 10px;
+  }
+
+  .g-grid--gap-5-10 {
+    gap: 5px 10px;
+  }
 
   .g-grid--3col,
   .g-grid--4col {
@@ -327,13 +568,17 @@ img[src$=".webp"] {
     height: 50px;
   }
 
-  .g-grid--3col { grid-template-columns: repeat(3, 1fr); }
+  .g-grid--3col {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   .g-grid--4col {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .g-grid--4col.g-grid--short { height: 40px; }
+  .g-grid--4col.g-grid--short {
+    height: 40px;
+  }
 
   .g-grid--cols-auto {
     grid-template-columns: auto auto;
@@ -407,34 +652,206 @@ img[src$=".webp"] {
 
   .g-grid--ac-start,
   .g-grid--ac-center,
-  .g-grid--ac-end { gap: 4px; }
+  .g-grid--ac-end {
+    gap: 4px;
+  }
 
-  .g-grid--ac-start { align-content: start; justify-content: start; }
-  .g-grid--ac-center { align-content: center; justify-content: center; }
-  .g-grid--ac-end { align-content: end; justify-content: end; }
-  .g-grid--ac-between { align-content: space-between; justify-content: space-between; gap: 0; }
-  .g-grid--ac-around { align-content: space-around; justify-content: space-around; gap: 0; }
-  .g-grid--ac-evenly { align-content: space-evenly; justify-content: space-evenly; gap: 0; }
+  .g-grid--ac-start {
+    align-content: start;
+    justify-content: start;
+  }
 
-  .g-grid--ai-start { align-items: start; justify-items: start; }
-  .g-grid--ai-center { align-items: center; justify-items: center; }
-  .g-grid--ai-end { align-items: end; justify-items: end; }
-  .g-grid--ai-stretch { align-items: stretch; justify-items: stretch; }
+  .g-grid--ac-center {
+    align-content: center;
+    justify-content: center;
+  }
 
-  .g-cell--c-2-4 { grid-column: 2 / 4; }
-  .g-cell--c-1--1 { grid-column: 1 / -1; }
-  .g-cell--c-3 { grid-column: 3; }
-  .g-cell--c-span-3 { grid-column: span 3; }
-  .g-cell--r-2 { grid-row: 2; grid-column: 2; }
-  .g-cell--r-2-5 { grid-row: 2 / 5; }
-  .g-cell--r-3 { grid-row: 3; }
-  .g-cell--r-span-2 { grid-row: span 2; }
-  .g-cell--a-2-3 { grid-area: 2 / 3; }
-  .g-cell--a-3-2 { grid-area: 3 / 2; }
-  .g-cell--self-start { align-self: start; justify-self: start; }
-  .g-cell--self-center { align-self: center; justify-self: center; }
-  .g-cell--self-end { align-self: end; justify-self: end; }
+  .g-grid--ac-end {
+    align-content: end;
+    justify-content: end;
+  }
+
+  .g-grid--ac-between {
+    align-content: space-between;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .g-grid--ac-around {
+    align-content: space-around;
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  .g-grid--ac-evenly {
+    align-content: space-evenly;
+    justify-content: space-evenly;
+    gap: 0;
+  }
+
+  .g-grid--ai-start {
+    align-items: start;
+    justify-items: start;
+  }
+
+  .g-grid--ai-center {
+    align-items: center;
+    justify-items: center;
+  }
+
+  .g-grid--ai-end {
+    align-items: end;
+    justify-items: end;
+  }
+
+  .g-grid--ai-stretch {
+    align-items: stretch;
+    justify-items: stretch;
+  }
+
+  .g-cell--c-2-4 {
+    grid-column: 2 / 4;
+  }
+
+  .g-cell--c-1--1 {
+    grid-column: 1 / -1;
+  }
+
+  .g-cell--c-3 {
+    grid-column: 3;
+  }
+
+  .g-cell--c-span-3 {
+    grid-column: span 3;
+  }
+
+  .g-cell--r-2 {
+    grid-row: 2;
+    grid-column: 2;
+  }
+
+  .g-cell--r-2-5 {
+    grid-row: 2 / 5;
+  }
+
+  .g-cell--r-3 {
+    grid-row: 3;
+  }
+
+  .g-cell--r-span-2 {
+    grid-row: span 2;
+  }
+
+  .g-cell--a-2-3 {
+    grid-area: 2 / 3;
+  }
+
+  .g-cell--a-3-2 {
+    grid-area: 3 / 2;
+  }
+
+  .g-cell--self-start {
+    align-self: start;
+    justify-self: start;
+  }
+
+  .g-cell--self-center {
+    align-self: center;
+    justify-self: center;
+  }
+
+  .g-cell--self-end {
+    align-self: end;
+    justify-self: end;
+  }
+
+  .pse-link {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    background: #caf;
+    color: #217;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .pse-link:focus {
+    outline: 3px solid #217;
+    outline-offset: 4px;
+  }
+
+  .pse-link:active {
+    background: #217;
+    color: #caf;
+  }
+
+  .pse-link:visited {
+    background: #acf;
+    color: #512;
+  }
+
+  .pse-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .pse-lista li {
+    padding: 10px 14px;
+    background: #eee;
+    color: #333;
+    border-radius: 6px;
+    margin-bottom: 6px;
+  }
+
+  .lista-1 li:first-child {
+    background: #caf;
+  }
+
+  .lista-1 li:last-child {
+    background: #cfa;
+  }
+
+  .lista-2 li:nth-child(4) {
+    background: #caf;
+  }
+
+  .lista-3 li:nth-child(even) {
+    background: #caf;
+  }
+
+  .lista-4 li:nth-child(odd) {
+    background: #caf;
+  }
+
+  .lista-5 li:nth-child(3n) {
+    background: #caf;
+  }
+
+  .lista-6 li:not(:last-child) {
+    border-bottom: 2px solid #217;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+
+  .pse-nth-demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .pse-nth-label {
+    font-size: 13px;
+    font-family: monospace;
+    color: var(--b3);
+    margin-bottom: 8px;
+  }
 </style>
+<script src="../js/page-transition.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <script src="../js/code.js"></script>
 <script src="../js/grid-demo.js"></script>

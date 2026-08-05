@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding-top: var(--header-height);
   font-family: "Inter", sans-serif;
+  overflow-x: clip;
 }
 
 ul {
@@ -28,4 +29,27 @@ blockquote,
 dd {
   margin: 0;
   padding: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a,
+  button {
+    transition:
+      color var(--transition-base),
+      background-color var(--transition-base),
+      border-color var(--transition-base),
+      box-shadow var(--transition-base),
+      transform var(--transition-smooth),
+      opacity var(--transition-base),
+      filter var(--transition-base);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

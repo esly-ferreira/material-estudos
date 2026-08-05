@@ -1,0 +1,35 @@
+html {
+  overflow-x: clip;
+  transition:
+    filter 500ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html.page-transition-pending,
+html.page-transition-exit {
+  overflow: hidden;
+  height: 100%;
+  filter: blur(12px);
+  opacity: 0;
+}
+
+html.page-transition-ready {
+  filter: blur(0);
+  opacity: 1;
+}
+
+html.page-transition-exit {
+  pointer-events: none;
+  transition-duration: 280ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    transition: opacity 300ms ease;
+  }
+
+  html.page-transition-pending,
+  html.page-transition-exit {
+    filter: none;
+  }
+}

@@ -3,8 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html.page-transition-pending {
+      overflow: hidden;
+      height: 100%;
+      filter: blur(12px);
+      opacity: 0
+    }
+  </style>
+  <script>document.documentElement.classList.add("page-transition-pending")</script>
   <link rel="stylesheet" href="./style.css">
-  <title>Template</title>
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <title>Material de Estudo</title>
 </head>
 
 <body>
@@ -12,12 +22,13 @@
   <header class="header">
     <div class="header-inner">
       <div class="header-brand">
-        <span class="header-icon">
-          <img src="./icons/code.svg" alt="">
-        </span>
+        <a href="./index.html" class="header-logo-link">
+          <span class="header-icon">
+            <img src="./imgs/logo.svg" alt="Logo">
+          </span>
+        </a>
         <div class="header-text">
-          <span class="header-label">Portfólio</span>
-          <h1>Template</h1>
+          <h1>Material <span class="header-title-muted">de Estudo</span></h1>
         </div>
       </div>
     </div>
@@ -108,6 +119,7 @@
     </div>
   </section>
 
+  <script src="./js/page-transition.js"></script>
 </body>
 
 </html>

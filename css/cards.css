@@ -18,12 +18,17 @@ a.card {
   padding: 16px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: 0.1s ease-in;
   padding-bottom: 24px;
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-smooth),
+    border-color var(--transition-base);
 }
 
 .card:hover {
-  scale: 1.05;
+  transform: scale(1.03);
+  box-shadow: 8px 12px 28px rgba(0, 0, 0, 0.14);
+  border-color: rgba(0, 0, 0, 0.14);
 }
 
 .imagem-card {
@@ -46,6 +51,14 @@ a.card {
   display: flex;
   align-items: center;
   opacity: 0.5;
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-smooth);
+}
+
+.card:hover .icone {
+  opacity: 0.75;
+  transform: translate(-50%, -50%) scale(1.06);
 }
 
 .icone img {
@@ -61,6 +74,11 @@ a.card {
 
 .descricao img {
   width: 16px;
+  transition: transform var(--transition-base);
+}
+
+.card:hover .descricao img {
+  transform: translateX(4px);
 }
 
 @media (max-width: 768px) {
@@ -75,7 +93,7 @@ a.card {
   }
 
   .card:hover {
-    scale: 1.02;
+    transform: scale(1.02);
   }
 
   .icone img {
@@ -100,7 +118,7 @@ a.card {
   }
 
   .card:hover {
-    scale: 1;
+    transform: none;
   }
 
   .card-logo {

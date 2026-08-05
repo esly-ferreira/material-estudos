@@ -11,11 +11,20 @@
   padding: 8px 6px;
   padding-right: 16px;
   line-height: 1;
-  transition: 0.1s ease-in;
+  transition:
+    transform var(--transition-smooth),
+    box-shadow var(--transition-base),
+    filter var(--transition-base);
 }
 
 .botao-voltar:hover {
-  scale: 1.05;
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  filter: brightness(1.08);
+}
+
+.botao-voltar:active {
+  transform: scale(0.98);
 }
 
 .icon-voltar {

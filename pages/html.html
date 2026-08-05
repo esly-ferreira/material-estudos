@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>html.page-transition-pending{overflow:hidden;height:100%;filter:blur(12px);opacity:0}</style>
+  <script>document.documentElement.classList.add("page-transition-pending")</script>
   <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <title>html</title>
 </head>
 
@@ -11,12 +14,13 @@
 <header class="header">
   <div class="header-inner">
     <div class="header-brand">
-      <span class="header-icon">
-        <img src="../icons/code.svg" alt="">
-      </span>
+      <a href="../index.html" class="header-logo-link">
+        <span class="header-icon">
+          <img src="../imgs/logo.svg" alt="Logo">
+        </span>
+      </a>
       <div class="header-text">
-        <span class="header-label">Portfólio</span>
-        <h1>Template</h1>
+        <h1>Material <span class="header-title-muted">de Estudo</span></h1>
       </div>
     </div>
     <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
@@ -341,6 +345,7 @@
     }
   }
 </style>
+<script src="../js/page-transition.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <script src="../js/code.js"></script>
 <script src="../js/html-tags.js"></script>

@@ -60,14 +60,19 @@
   padding: 8px 16px;
   border-radius: 8px;
   text-decoration: none;
-  transition: 0.3s;
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base),
+    transform var(--transition-smooth),
+    box-shadow var(--transition-base);
   word-break: break-word;
 }
 
 .conteudo a:hover {
   background-color: var(--blue);
   color: var(--b0);
-  scale: 1.05;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 153, 255, 0.3);
 }
 
 .exemplo h2 {
@@ -112,7 +117,7 @@
     padding: 8px 12px;
   }
   .conteudo a:hover {
-    scale: 1.01;
+    transform: translateY(-1px);
   }
 }
 
