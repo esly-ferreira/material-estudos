@@ -12,51 +12,55 @@
     }
   </style>
   <script>document.documentElement.classList.add("page-transition-pending")</script>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../site.css">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <title>Design</title>
 </head>
 
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="header">
-  <div class="header-inner">
-    <div class="header-brand">
-      <a href="../index.html" class="header-logo-link">
-        <span class="header-icon">
-          <img src="../imgs/logo.svg" alt="Logo">
-        </span>
-      </a>
-      <div class="header-text">
-        <h1>Material <span class="header-title-muted">de Estudo</span></h1>
-      </div>
-    </div>
-    <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
-  </div>
-</header>
-
-<section class="bg">
-  <div class="capa">
-    <div class="imagem-card">
-      <img class="card-logo" src="../imgs/yellow.webp" alt="">
-    </div>
-    <img class="icon-banner" src="../icons/design.svg" alt="">
-  </div>
-</section>
-
-<section class="content bg">
-  <div class="sidebar">
-    <h1>Filtros</h1>
-    <nav class="sidebar-nav">
-      <a href="#variacoes">Variações da Cor</a>
-      <a href="#natural">Natural</a>
-      <a href="#artificial">Artificial</a>
-      <a href="#luminosidade">Luminosidade</a>
-      <a href="#saturacao-baixa">Saturação Baixa</a>
-      <a href="#tons-de-cinza">Tons de Cinza</a>
-      <a href="#texto-e-imagem">Texto e Imagem</a>
+  <div class="max-container divider-container">
+    <a class="header-logo" href="../index.html">
+      <img src="../imgs/logo.svg" alt="Material de Estudo">
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+    </button>
+    <nav class="header-nav" aria-label="Principal">
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="./html.html">HTML</a></li>
+        <li><a href="./css.html">CSS</a></li>
+        <li><a href="./vscode.html">VS Code</a></li>
+        <li><a href="./design.html" aria-current="page">Design</a></li>
+        <li><a href="./modulos-de-estilo.html">Módulos</a></li>
+      </ul>
     </nav>
   </div>
+  <div class="menu-backdrop"></div>
+</header>
 
-  <div class="conteudo-area">
+<main id="conteudo">
+  <section class="surface">
+    <div class="max-container">
+      <header class="section-header">
+        <span class="section-label">Design</span>
+        <h1 class="section-title">Cor e contraste</h1>
+        <p class="section-lead">Variação, cinza e texto sobre imagem.</p>
+      </header>
+      <nav class="projetos-filtros" aria-label="Nesta página">
+        <a class="filtro-btn" href="#variacoes">Variações da Cor</a>
+        <a class="filtro-btn" href="#natural">Natural</a>
+        <a class="filtro-btn" href="#artificial">Artificial</a>
+        <a class="filtro-btn" href="#luminosidade">Luminosidade</a>
+        <a class="filtro-btn" href="#saturacao-baixa">Saturação Baixa</a>
+        <a class="filtro-btn" href="#tons-de-cinza">Tons de Cinza</a>
+        <a class="filtro-btn" href="#texto-e-imagem">Texto e Imagem</a>
+      </nav>
+      <div class="conteudo-area">
 
     <div class="conteudo" id="variacoes">
       <h1>Variações da Cor</h1>
@@ -102,8 +106,20 @@
     </div>
 
   </div>
-</section>
+    </div>
+  </section>
+</main>
 
+<footer class="footer">
+  <p class="footer-brand">Estudos</p>
+  <div class="max-container">
+    <div class="footer-bottom">
+      <p>Material de estudo</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/menu.js"></script>
 <script src="../js/page-transition.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <script src="../js/code.js"></script>

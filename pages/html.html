@@ -5,51 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>html.page-transition-pending{overflow:hidden;height:100%;filter:blur(12px);opacity:0}</style>
   <script>document.documentElement.classList.add("page-transition-pending")</script>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../site.css">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <title>html</title>
 </head>
 
 
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="header">
-  <div class="header-inner">
-    <div class="header-brand">
-      <a href="../index.html" class="header-logo-link">
-        <span class="header-icon">
-          <img src="../imgs/logo.svg" alt="Logo">
-        </span>
-      </a>
-      <div class="header-text">
-        <h1>Material <span class="header-title-muted">de Estudo</span></h1>
-      </div>
-    </div>
-    <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
-  </div>
-</header>
-
-<section class="bg">
-  <div class="capa">
-    <div class="imagem-card">
-      <img class="card-logo" src="../imgs/orange.webp" alt="">
-    </div>
-    <img class="icon-banner" src="../icons/html.svg" alt="">
-  </div>
-</section>
-
-<section class="content bg">
-  <div class="sidebar">
-    <h1>Filtros</h1>
-    <nav class="sidebar-nav">
-      <a href="#estrutura">Estrutura do documento</a>
-      <a href="#mapa">Mapa visual</a>
-      <a href="#semantica">Tags semânticas</a>
-      <a href="#conteudo">Tags de conteúdo</a>
-      <a href="#formulario">Formulário</a>
-      <a href="#midia">Mídia e tabelas</a>
+  <div class="max-container divider-container">
+    <a class="header-logo" href="../index.html">
+      <img src="../imgs/logo.svg" alt="Material de Estudo">
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+    </button>
+    <nav class="header-nav" aria-label="Principal">
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="./html.html" aria-current="page">HTML</a></li>
+        <li><a href="./css.html">CSS</a></li>
+        <li><a href="./vscode.html">VS Code</a></li>
+        <li><a href="./design.html">Design</a></li>
+        <li><a href="./modulos-de-estilo.html">Módulos</a></li>
+      </ul>
     </nav>
   </div>
+  <div class="menu-backdrop"></div>
+</header>
 
-  <div class="conteudo-area">
+<main id="conteudo">
+  <section class="surface">
+    <div class="max-container">
+      <header class="section-header">
+        <span class="section-label">HTML</span>
+        <h1 class="section-title">Marcação</h1>
+        <p class="section-lead">Estrutura, semântica, formulário e mídia.</p>
+      </header>
+      <nav class="projetos-filtros" aria-label="Nesta página">
+        <a class="filtro-btn" href="#estrutura">Estrutura do documento</a>
+        <a class="filtro-btn" href="#mapa">Mapa visual</a>
+        <a class="filtro-btn" href="#semantica">Tags semânticas</a>
+        <a class="filtro-btn" href="#conteudo">Tags de conteúdo</a>
+        <a class="filtro-btn" href="#formulario">Formulário</a>
+        <a class="filtro-btn" href="#midia">Mídia e tabelas</a>
+      </nav>
+      <div class="conteudo-area">
 
     <div class="conteudo" id="mapa">
       <h1>Mapa visual</h1>
@@ -296,8 +300,18 @@
       <div class="h-tags"></div>
     </div>
   </div>
+    </div>
+  </section>
+</main>
 
-</section>
+<footer class="footer">
+  <p class="footer-brand">Estudos</p>
+  <div class="max-container">
+    <div class="footer-bottom">
+      <p>Material de estudo</p>
+    </div>
+  </div>
+</footer>
 
 <style>
   .h-tags {
@@ -315,7 +329,7 @@
     align-items: start;
     padding: 12px 16px;
     border-radius: 16px;
-    background: var(--b1);
+    background: var(--w2);
     border: 1px solid rgba(0, 0, 0, 0.08);
   }
 
@@ -338,7 +352,7 @@
   }
 
   .h-wire {
-    background: var(--a2);
+    background: var(--b2);
     padding: 16px;
     overflow-x: auto;
   }
@@ -377,7 +391,7 @@
   .h-wire__block span,
   .h-wire__mini span {
     font-size: 12px;
-    color: var(--b0);
+    color: var(--w1);
   }
 
   .h-wire__chips span {
@@ -391,8 +405,8 @@
   .h-wire__body {
     padding: 10px;
     border-radius: 8px;
-    background: var(--a1);
-    border: 1px solid var(--a1);
+    background: var(--b1);
+    border: 1px solid var(--b1);
     margin: 12px;
   }
 
@@ -406,27 +420,27 @@
 
   .h-wire__block small {
     font-size: 12px;
-    color: var(--b2);
+    color: #a7a4a1;
   }
 
   .h-wire__block--header {
-    background: var(--a2);
+    background: var(--b2);
   }
 
   .h-wire__block--nav {
-    background: var(--a2);
+    background: var(--b2);
   }
 
   .h-wire__block--hero {
-    background: var(--a2);
+    background: var(--b2);
   }
 
   .h-wire__block--aside {
-    background: var(--a2);
+    background: var(--b2);
   }
 
   .h-wire__block--main {
-    background: var(--a2);
+    background: var(--b2);
     flex: 1;
     gap: 8px;
   }
@@ -438,16 +452,16 @@
   }
 
   .h-wire__block--article {
-    background: var(--a2);
+    background: var(--b2);
     gap: 8px;
   }
 
   .h-wire__block--search {
-    background: var(--a2);
+    background: var(--b2);
   }
 
   .h-wire__block--footer {
-    background: var(--a2);
+    background: var(--b2);
   }
 
   .h-wire__block--dim {
@@ -483,6 +497,7 @@
     }
   }
 </style>
+<script src="../js/menu.js"></script>
 <script src="../js/page-transition.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <script src="../js/code.js"></script>

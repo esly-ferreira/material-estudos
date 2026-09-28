@@ -12,54 +12,56 @@
     }
   </style>
   <script>document.documentElement.classList.add("page-transition-pending")</script>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../site.css">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <title>css</title>
 </head>
 
 
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="header">
-  <div class="header-inner">
-    <div class="header-brand">
-      <a href="../index.html" class="header-logo-link">
-        <span class="header-icon">
-          <img src="../imgs/logo.svg" alt="Logo">
-        </span>
-      </a>
-      <div class="header-text">
-        <h1>Material <span class="header-title-muted">de Estudo</span></h1>
-      </div>
-    </div>
-    <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
-  </div>
-</header>
-
-<section class="bg">
-  <div class="capa">
-    <div class="imagem-card">
-      <img class="card-logo" src="../imgs/blue.webp" alt="">
-    </div>
-    <img class="icon-banner" src="../icons/css.svg" alt="">
-  </div>
-</section>
-
-<section class="content bg">
-  <div class="sidebar">
-    <h1>Filtros</h1>
-
-    <nav class="sidebar-nav">
-      <a href="#reset">Reset Global</a>
-      <a href="#display">Display inline e block</a>
-      <a href="#grid">Display grid</a>
-      <a href="#pseudo-classes">Pseudo-classes</a>
-      <a href="#seletores">Seletores</a>
-      <a href="#clean-css">Clean CSS</a>
-      <a href="#troca-de-tema">Troca de tema</a>
+  <div class="max-container divider-container">
+    <a class="header-logo" href="../index.html">
+      <img src="../imgs/logo.svg" alt="Material de Estudo">
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+    </button>
+    <nav class="header-nav" aria-label="Principal">
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="./html.html">HTML</a></li>
+        <li><a href="./css.html" aria-current="page">CSS</a></li>
+        <li><a href="./vscode.html">VS Code</a></li>
+        <li><a href="./design.html">Design</a></li>
+        <li><a href="./modulos-de-estilo.html">Módulos</a></li>
+      </ul>
     </nav>
   </div>
+  <div class="menu-backdrop"></div>
+</header>
 
-
-  <div class="conteudo-area">
+<main id="conteudo">
+  <section class="surface">
+    <div class="max-container">
+      <header class="section-header">
+        <span class="section-label">CSS</span>
+        <h1 class="section-title">Folhas de estilo</h1>
+        <p class="section-lead">Reset, display, grid, seletores e tema.</p>
+      </header>
+      <nav class="projetos-filtros" aria-label="Nesta página">
+        <a class="filtro-btn" href="#reset">Reset Global</a>
+        <a class="filtro-btn" href="#display">Display inline e block</a>
+        <a class="filtro-btn" href="#grid">Display grid</a>
+        <a class="filtro-btn" href="#pseudo-classes">Pseudo-classes</a>
+        <a class="filtro-btn" href="#seletores">Seletores</a>
+        <a class="filtro-btn" href="#clean-css">Clean CSS</a>
+        <a class="filtro-btn" href="#troca-de-tema">Troca de tema</a>
+      </nav>
+      <div class="conteudo-area">
     <div class="conteudo" id="reset">
       <h1>Reset Global</h1>
       <p>Reset CSS global do projeto.</p>
@@ -564,9 +566,19 @@ body {
       </div>
     </div>
 
-  </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-</section>
+<footer class="footer">
+  <p class="footer-brand">Estudos</p>
+  <div class="max-container">
+    <div class="footer-bottom">
+      <p>Material de estudo</p>
+    </div>
+  </div>
+</footer>
 
 <style>
   .inline {
@@ -591,7 +603,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    background: var(--a2);
+    background: var(--b2);
   }
 
   .g-row--sm {
@@ -605,7 +617,7 @@ body {
   .g-label {
     font-family: monospace;
     font-size: 12px;
-    color: var(--b0);
+    color: var(--w1);
     margin-bottom: 8px;
   }
 
@@ -618,18 +630,18 @@ body {
   .g-grid {
     display: grid;
     gap: 4px;
-    border: 1px solid var(--b2);
+    border: 1px solid color-mix(in srgb, var(--w1) 35%, transparent);
     padding: 6px;
   }
 
   .g-cell {
     background: #0099ff66;
-    border: 1px solid var(--blue);
+    border: 1px solid var(--link);
   }
 
   .g-cell--muted {
     background: #0099ff33;
-    border: 1px solid var(--b2);
+    border: 1px solid color-mix(in srgb, var(--w1) 35%, transparent);
   }
 
   .g-cell--sm {
@@ -652,7 +664,7 @@ body {
   .g-dot {
     width: 4px;
     height: 4px;
-    background: var(--b0);
+    background: var(--w1);
     border-radius: 50%;
     display: block;
   }
@@ -752,7 +764,7 @@ body {
     font-family: monospace;
     font-size: 12px;
     font-weight: 600;
-    color: var(--b0);
+    color: var(--w1);
   }
 
   .g-cell--area-a {
@@ -1035,6 +1047,7 @@ body {
     margin-bottom: 8px;
   }
 </style>
+<script src="../js/menu.js"></script>
 <script src="../js/page-transition.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <script src="../js/code.js"></script>

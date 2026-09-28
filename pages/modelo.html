@@ -2,7 +2,7 @@
   MODELO DE PÁGINA
   1. Copie este arquivo e renomeie (ex: figma.html)
   2. Troque tudo marcado com [TROCAR]
-  3. Adicione links no sidebar e blocos .conteudo conforme precisar
+  3. O visual vem de estilos-page-principal via ../site.css — não altere esses CSS
 -->
 <html lang="pt-br">
 
@@ -18,77 +18,88 @@
     }
   </style>
   <script>document.documentElement.classList.add("page-transition-pending")</script>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../site.css">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
   <title>[TROCAR: título]</title>
 </head>
 
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="header">
-  <div class="header-inner">
-    <div class="header-brand">
-      <a href="../index.html" class="header-logo-link">
-        <span class="header-icon">
-          <img src="../imgs/logo.svg" alt="Logo">
-        </span>
-      </a>
-      <div class="header-text">
-        <h1>Material <span class="header-title-muted">de Estudo</span></h1>
-      </div>
-    </div>
-    <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
-  </div>
-</header>
-
-<section class="bg">
-  <div class="capa">
-    <div class="imagem-card">
-      <!-- Imagens: blue.webp | green.webp | orange.webp | yellow.webp -->
-      <img class="card-logo" src="../imgs/[TROCAR].webp" alt="">
-    </div>
-    <!-- Ícones em ../icons/ (css.svg, html.svg, js.svg, vscode.svg, figma.svg, ...) -->
-    <img class="icon-banner" src="../icons/[TROCAR].svg" alt="">
-  </div>
-</section>
-
-<section class="content bg">
-  <div class="sidebar">
-    <h1>Filtros</h1>
-    <nav class="sidebar-nav">
-      <a href="#secao-1">[TROCAR: seção 1]</a>
-      <a href="#secao-2">[TROCAR: seção 2]</a>
+  <div class="max-container divider-container">
+    <a class="header-logo" href="../index.html">
+      <img src="../imgs/logo.svg" alt="Material de Estudo">
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+    </button>
+    <nav class="header-nav" aria-label="Principal">
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="./html.html">HTML</a></li>
+        <li><a href="./css.html">CSS</a></li>
+        <li><a href="./vscode.html">VS Code</a></li>
+        <li><a href="./design.html">Design</a></li>
+        <li><a href="./modulos-de-estilo.html">Módulos</a></li>
+      </ul>
     </nav>
   </div>
+  <div class="menu-backdrop"></div>
+</header>
 
-  <div class="conteudo-area">
+<main id="conteudo">
+  <section class="surface">
+    <div class="max-container">
+      <header class="section-header">
+        <span class="section-label">[TROCAR: rótulo]</span>
+        <h1 class="section-title">[TROCAR: título]</h1>
+        <p class="section-lead">[TROCAR: descrição curta]</p>
+      </header>
+      <nav class="projetos-filtros" aria-label="Nesta página">
+        <a class="filtro-btn" href="#secao-1">[TROCAR: seção 1]</a>
+        <a class="filtro-btn" href="#secao-2">[TROCAR: seção 2]</a>
+      </nav>
+      <div class="conteudo-area">
 
-    <div class="conteudo" id="secao-1">
-      <h1>[TROCAR: título da seção]</h1>
-      <p>[TROCAR: descrição]</p>
-
-      <div class="exemplo">
-        <h2>[TROCAR: subtítulo]</h2>
-        <div class="caixa-exemplo">
-          <!-- conteúdo do exemplo -->
+        <div class="conteudo" id="secao-1">
+          <h1>[TROCAR: título da seção]</h1>
+          <p>[TROCAR: descrição]</p>
+          <div class="exemplo">
+            <h2>[TROCAR: subtítulo]</h2>
+            <div class="caixa-exemplo">
+              <!-- conteúdo do exemplo -->
+            </div>
+          </div>
         </div>
+
+        <div class="conteudo" id="secao-2">
+          <h1>[TROCAR: título da seção]</h1>
+          <p>[TROCAR: descrição]</p>
+          <div class="code-block code-block--css">
+            <div class="code-block__header">
+              <span class="code-block__lang">CSS</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-css">/* código aqui */</code></pre>
+          </div>
+        </div>
+
       </div>
     </div>
+  </section>
+</main>
 
-    <div class="conteudo" id="secao-2">
-      <h1>[TROCAR: título da seção]</h1>
-      <p>[TROCAR: descrição]</p>
-
-      <!-- Exemplo de bloco de código (opcional) -->
-      <div class="code-block code-block--css">
-        <div class="code-block__header">
-          <span class="code-block__lang">CSS</span>
-        </div>
-        <pre class="code-block__pre"><code class="language-css">/* código aqui */</code></pre>
-      </div>
+<footer class="footer">
+  <p class="footer-brand">Estudos</p>
+  <div class="max-container">
+    <div class="footer-bottom">
+      <p>Material de estudo</p>
     </div>
-
   </div>
-</section>
+</footer>
 
+<script src="../js/menu.js"></script>
 <script src="../js/page-transition.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <script src="../js/code.js"></script>

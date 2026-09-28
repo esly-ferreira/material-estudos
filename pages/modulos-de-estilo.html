@@ -12,7 +12,7 @@
     }
   </style>
   <script>document.documentElement.classList.add("page-transition-pending")</script>
-  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../site.css">
   <!-- Módulos (sem reset.css para não sobrescrever o shell do site) -->
   <link rel="stylesheet" href="../arquivos-modulos/variables.css">
   <link rel="stylesheet" href="../arquivos-modulos/colors.css">
@@ -42,57 +42,61 @@
   <title>Modulos de Estilos</title>
 </head>
 
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="header">
-  <div class="header-inner">
-    <div class="header-brand">
-      <a href="../index.html" class="header-logo-link">
-        <span class="header-icon">
-          <img src="../imgs/logo.svg" alt="Logo">
-        </span>
-      </a>
-      <div class="header-text">
-        <h1>Material <span class="header-title-muted">de Estudo</span></h1>
-      </div>
-    </div>
-    <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
-  </div>
-</header>
-
-<section class="bg">
-  <div class="capa">
-    <div class="imagem-card">
-      <img class="card-logo" src="../imgs/yellow.webp" alt="">
-    </div>
-    <img class="icon-banner" src="../icons/css.svg" alt="">
-  </div>
-</section>
-
-<section class="content bg">
-  <div class="sidebar">
-    <h1>Filtros</h1>
-    <nav class="sidebar-nav">
-      <a href="#buttons">Buttons</a>
-      <a href="#inputs">Inputs</a>
-      <a href="#alerts">Alerts</a>
-      <a href="#cards">Cards</a>
-      <a href="#panel-card">Panel Card</a>
-      <a href="#info-stat">Info Stat</a>
-      <a href="#modal">Modal</a>
-      <a href="#dropdown">Dropdown</a>
-      <a href="#tooltips">Tooltips</a>
-      <a href="#table">Table</a>
-      <a href="#pagination">Pagination</a>
-      <a href="#status">Status</a>
-      <a href="#datepicker">Datepicker</a>
-      <a href="#calendar">Calendar</a>
-      <a href="#page">Page</a>
-      <a href="#shadows">Shadows</a>
-      <a href="#spacing">Spacing & Grids</a>
-      <a href="#typography">Typography</a>
+  <div class="max-container divider-container">
+    <a class="header-logo" href="../index.html">
+      <img src="../imgs/logo.svg" alt="Material de Estudo">
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+      <span class="menu-toggle-bar"></span>
+    </button>
+    <nav class="header-nav" aria-label="Principal">
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="./html.html">HTML</a></li>
+        <li><a href="./css.html">CSS</a></li>
+        <li><a href="./vscode.html">VS Code</a></li>
+        <li><a href="./design.html">Design</a></li>
+        <li><a href="./modulos-de-estilo.html" aria-current="page">Módulos</a></li>
+      </ul>
     </nav>
   </div>
+  <div class="menu-backdrop"></div>
+</header>
 
-  <div class="conteudo-area">
+<main id="conteudo">
+  <section class="surface">
+    <div class="max-container">
+      <header class="section-header">
+        <span class="section-label">Módulos</span>
+        <h1 class="section-title">Sistema visual</h1>
+        <p class="section-lead">Componentes e tokens de <code>arquivos-modulos</code>.</p>
+      </header>
+      <nav class="projetos-filtros" aria-label="Nesta página">
+        <a class="filtro-btn" href="#buttons">Buttons</a>
+        <a class="filtro-btn" href="#inputs">Inputs</a>
+        <a class="filtro-btn" href="#alerts">Alerts</a>
+        <a class="filtro-btn" href="#cards">Cards</a>
+        <a class="filtro-btn" href="#panel-card">Panel Card</a>
+        <a class="filtro-btn" href="#info-stat">Info Stat</a>
+        <a class="filtro-btn" href="#modal">Modal</a>
+        <a class="filtro-btn" href="#dropdown">Dropdown</a>
+        <a class="filtro-btn" href="#tooltips">Tooltips</a>
+        <a class="filtro-btn" href="#table">Table</a>
+        <a class="filtro-btn" href="#pagination">Pagination</a>
+        <a class="filtro-btn" href="#status">Status</a>
+        <a class="filtro-btn" href="#datepicker">Datepicker</a>
+        <a class="filtro-btn" href="#calendar">Calendar</a>
+        <a class="filtro-btn" href="#page">Page</a>
+        <a class="filtro-btn" href="#shadows">Shadows</a>
+        <a class="filtro-btn" href="#spacing">Spacing &amp; Grids</a>
+        <a class="filtro-btn" href="#typography">Typography</a>
+      </nav>
+      <div class="conteudo-area">
 
     <div class="conteudo" id="buttons">
       <h1>Buttons</h1>
@@ -864,8 +868,20 @@
     </div>
 
   </div>
-</section>
+    </div>
+  </section>
+</main>
 
+<footer class="footer">
+  <p class="footer-brand">Estudos</p>
+  <div class="max-container">
+    <div class="footer-bottom">
+      <p>Material de estudo</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/menu.js"></script>
 <script src="../js/page-transition.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
 <script src="../js/code.js"></script>

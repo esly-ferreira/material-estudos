@@ -1,0 +1,133 @@
+/* Ajustes só do material de estudo.
+   O visual vem de estilos-page-principal — este arquivo não redefine aquele sistema. */
+
+:root {
+  --transition-base: 250ms ease;
+  --p2-90: color-mix(in srgb, var(--p2) 90%, transparent);
+}
+
+body {
+  color: var(--w1);
+}
+
+.hero.hero--notas {
+  min-height: auto;
+  background-image: none;
+  justify-content: flex-start;
+  padding-block: 4.5rem 3.5rem;
+}
+
+.hero.hero--notas .max-container {
+  pointer-events: auto;
+}
+
+a.projeto-card {
+  color: inherit;
+}
+
+a.filtro-btn {
+  text-decoration: none;
+}
+
+.conteudo {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0 0 2.5rem;
+  margin: 0 0 2.5rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--b3) 12%, transparent);
+  scroll-margin-top: calc(80px + 1.5rem);
+}
+
+.conteudo:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.conteudo > h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--b2);
+  margin-bottom: 0.75rem;
+}
+
+.conteudo > p,
+.exemplo > p {
+  font-size: 1.0625rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--b3);
+  max-width: 68ch;
+  margin-bottom: 1rem;
+}
+
+.conteudo code {
+  font-size: 0.9em;
+}
+
+.exemplo h2 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-condensed);
+  font-weight: 400;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--b2);
+}
+
+.caixa-exemplo {
+  margin-top: 1rem;
+  padding: 1.25rem;
+  border-radius: 24px;
+  border: 1px solid color-mix(in srgb, var(--b3) 10%, transparent);
+  background: var(--w2);
+}
+
+.conteudo > a {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  border: 1px solid color-mix(in srgb, var(--b3) 22%, transparent);
+  color: var(--b2);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.conteudo > a:hover {
+  background: var(--b2);
+  border-color: var(--b2);
+  color: var(--w1);
+}
+
+.conteudo .img-conteudo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 24px;
+}
+
+.code-block {
+  border-radius: 24px;
+}
+
+@media (max-width: 768px) {
+  .conteudo > h1 {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+}

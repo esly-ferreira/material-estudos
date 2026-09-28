@@ -12,142 +12,133 @@
     }
   </style>
   <script>document.documentElement.classList.add("page-transition-pending")</script>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./site.css">
   <link rel="icon" href="./favicon.ico" type="image/x-icon">
   <title>Material de Estudo</title>
 </head>
 
 <body>
 
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
   <header class="header">
-    <div class="header-inner">
-      <div class="header-brand">
-        <a href="./index.html" class="header-logo-link">
-          <span class="header-icon">
-            <img src="./imgs/logo.svg" alt="Logo">
-          </span>
-        </a>
-        <div class="header-text">
-          <h1>Material <span class="header-title-muted">de Estudo</span></h1>
-        </div>
-      </div>
+    <div class="max-container divider-container">
+      <a class="header-logo" href="./index.html">
+        <img src="./imgs/logo.svg" alt="Material de Estudo">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+      </button>
+      <nav class="header-nav" aria-label="Principal">
+        <ul>
+          <li><a href="./index.html" aria-current="page">Início</a></li>
+          <li><a href="./pages/html.html">HTML</a></li>
+          <li><a href="./pages/css.html">CSS</a></li>
+          <li><a href="./pages/vscode.html">VS Code</a></li>
+          <li><a href="./pages/design.html">Design</a></li>
+          <li><a href="./pages/modulos-de-estilo.html">Módulos</a></li>
+        </ul>
+      </nav>
     </div>
+    <div class="menu-backdrop"></div>
   </header>
 
-  <section class="content bg" id="stack">
-    <aside class="sidebar">
-      <h1>Stack</h1>
-      <p>Stack de tecnologias que eu uso no meu dia a dia.</p>
-      <nav class="sidebar-nav">
-        <a href="#">CSS</a>
-        <a href="#">HTML</a>
-        <a href="#">JavaScript</a>
-        <a href="#">Design</a>
-        <a href="#">Code</a>
-        <a href="#">Design</a>
-        <a href="#">Modulos de Estilos</a>
-      </nav>
-      <div class="sidebar-tags">
-        <span>Frontend</span>
-        <span>UI/UX</span>
-        <span>Web</span>
-      </div>
-    </aside>
-
-
-
-    <div class="cards">
-
-      <a href="./pages/vscode.html" class="card">
-        <div class="imagem-card">
-          <img class="card-logo" src="./imgs/green.webp" alt="imagem decoração">
-          <span class="icone"><img src="./icons/vscode.svg" alt=""></span>
-        </div>
-        <div class="descricao">
-          <h1>VS Code</h1>
-          <span><img src="./icons/arrow-green.svg" alt=""></span>
-        </div>
-        <p>Editor de código.</p>
-      </a>
-
-      <a href="./pages/css.html" class="card">
-        <div class="imagem-card">
-          <img class="card-logo" src="./imgs/blue.webp" alt="imagem decoração">
-          <span class="icone"><img src="./icons/css.svg" alt=""></span>
-        </div>
-        <div class="descricao">
-          <h1>CSS</h1>
-          <span><img src="./icons/arrow-blue.svg" alt=""></span>
-        </div>
-        <p>Linguagem de marcação para a criação de páginas web.</p>
-      </a>
-
-      <a href="./pages/html.html" class="card">
-        <div class="imagem-card">
-          <img class="card-logo" src="./imgs/orange.webp" alt="imagem decoração">
-          <span class="icone"><img src="./icons/html.svg" alt=""></span>
-        </div>
-        <div class="descricao">
-          <h1>HTML</h1>
-          <span><img src="./icons/arrow-orange.svg" alt=""></span>
-        </div>
-        <p>Linguagem de marcação para a criação de páginas web.</p>
-      </a>
-
-
-      <a href="./pages/design.html">
-        <div class="card">
-          <div class="imagem-card">
-            <img class="card-logo" src="./imgs/yellow.webp" alt="imagem decoração">
-            <span class="icone"><img src="./icons/design.svg" alt=""></span>
+  <main id="conteudo">
+    <section class="surface surface-corner hero hero--notas">
+      <div class="max-container">
+        <div class="hero-content">
+          <p class="hero-greeting anim anim-fade-up">Material de estudo</p>
+          <h1 class="anim anim-fade-up anim-delay-1">Notas</h1>
+          <div class="introducao anim anim-fade-up anim-delay-2">
+            <p>Anotações de HTML, CSS, VS Code, design e os módulos de estilo que eu uso no dia a dia.</p>
+            <div class="cta-actions">
+              <a class="btn-hero" href="#stack">Ver stack<span><img src="./icons/seta-btn.svg" alt=""></span></a>
+            </div>
           </div>
-          <div class="descricao">
-            <h1>Design</h1>
-            <span><img src="./icons/arrow-green.svg" alt=""></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="surface" id="stack">
+      <div class="max-container">
+        <div class="projetos-header">
+          <div class="projetos-header-text">
+            <span class="section-label">Stack</span>
+            <h2 class="section-title">O que eu estudo</h2>
+            <p class="section-lead">Cada card abre as anotações daquele assunto.</p>
           </div>
-          <p>Design de interfaces e experiência do usuário.</p>
         </div>
-      </a>
 
-      <a href="./pages/modulos-de-estilo.html" class="card">
-        <div class="imagem-card">
-          <img class="card-logo" src="./imgs/yellow.webp" alt="imagem decoração">
-          <span class="icone"><img src="./icons/css.svg" alt=""></span>
-        </div>
-        <div class="descricao">
-          <h1>Modulos de Estilos</h1>
-          <span><img src="./icons/arrow-green.svg" alt=""></span>
-        </div>
-        <p>Modulos de estilos para o CSS.</p>
-      </a>
+        <div class="projetos-page-grid">
+          <a class="projeto-card projeto-card--featured projeto-card--has-media" href="./pages/modulos-de-estilo.html">
+            <figure class="projeto-card-media">
+              <img src="./imgs/yellow.webp" alt="">
+            </figure>
+            <div class="projeto-card-top">
+              <span class="projeto-tag">CSS</span>
+            </div>
+            <div class="projeto-card-body">
+              <h3>Módulos de estilos</h3>
+              <p>Botões, inputs, tabela, tipografia e os tokens do sistema.</p>
+            </div>
+          </a>
 
+          <a class="projeto-card projeto-card--has-media" href="./pages/html.html">
+            <figure class="projeto-card-media">
+              <img src="./imgs/orange.webp" alt="">
+            </figure>
+            <div class="projeto-card-body">
+              <h3>HTML</h3>
+              <p>Estrutura, semântica, formulário e mídia.</p>
+            </div>
+          </a>
 
-      <div class="card">
-        <div class="imagem-card">
-          <img class="card-logo" src="./imgs/yellow.webp" alt="imagem decoração">
-          <span class="icone"><img src="./icons/js.svg" alt=""></span>
+          <a class="projeto-card projeto-card--accent projeto-card--has-media" href="./pages/css.html">
+            <figure class="projeto-card-media">
+              <img src="./imgs/blue.webp" alt="">
+            </figure>
+            <div class="projeto-card-body">
+              <h3>CSS</h3>
+              <p>Reset, display, grid, seletores e tema.</p>
+            </div>
+          </a>
+
+          <a class="projeto-card projeto-card--dark projeto-card--has-media" href="./pages/vscode.html">
+            <figure class="projeto-card-media">
+              <img src="./imgs/green.webp" alt="">
+            </figure>
+            <div class="projeto-card-body">
+              <h3>VS Code</h3>
+              <p>Extensões, config e o que fica no navegador.</p>
+            </div>
+          </a>
+
+          <a class="projeto-card projeto-card--has-media" href="./pages/design.html">
+            <figure class="projeto-card-media">
+              <img src="./imgs/yellow.webp" alt="">
+            </figure>
+            <div class="projeto-card-body">
+              <h3>Design</h3>
+              <p>Variação de cor, cinza, contraste e texto sobre imagem.</p>
+            </div>
+          </a>
         </div>
-        <div class="descricao">
-          <h1>JavaScript</h1>
-          <span><img src="./icons/arrow-yellow.svg" alt=""></span>
-        </div>
-        <p>Linguagem de programação para a criação de páginas web.</p>
       </div>
+    </section>
+  </main>
 
-      <div class="card">
-        <div class="imagem-card">
-          <img class="card-logo" src="./imgs/green.webp" alt="imagem decoração">
-          <span class="icone"><img src="./icons/figma.svg" alt=""></span>
-        </div>
-        <div class="descricao">
-          <h1>Figma</h1>
-          <span><img src="./icons/arrow-green.svg" alt=""></span>
-        </div>
-        <p>Editor de design.</p>
+  <footer class="footer">
+    <p class="footer-brand">Estudos</p>
+    <div class="max-container">
+      <div class="footer-bottom">
+        <p>Material de estudo</p>
       </div>
+    </div>
+  </footer>
 
-  </section>
-
+  <script src="./js/menu.js"></script>
   <script src="./js/page-transition.js"></script>
 </body>
 
