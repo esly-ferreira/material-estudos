@@ -1,0 +1,111 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html.page-transition-pending {
+      overflow: hidden;
+      height: 100%;
+      filter: blur(12px);
+      opacity: 0
+    }
+  </style>
+  <script>document.documentElement.classList.add("page-transition-pending")</script>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <title>Design</title>
+</head>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <a href="../index.html" class="header-logo-link">
+        <span class="header-icon">
+          <img src="../imgs/logo.svg" alt="Logo">
+        </span>
+      </a>
+      <div class="header-text">
+        <h1>Material <span class="header-title-muted">de Estudo</span></h1>
+      </div>
+    </div>
+    <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
+  </div>
+</header>
+
+<section class="bg">
+  <div class="capa">
+    <div class="imagem-card">
+      <img class="card-logo" src="../imgs/yellow.webp" alt="">
+    </div>
+    <img class="icon-banner" src="../icons/design.svg" alt="">
+  </div>
+</section>
+
+<section class="content bg">
+  <div class="sidebar">
+    <h1>Filtros</h1>
+    <nav class="sidebar-nav">
+      <a href="#variacoes">Variações da Cor</a>
+      <a href="#natural">Natural</a>
+      <a href="#artificial">Artificial</a>
+      <a href="#luminosidade">Luminosidade</a>
+      <a href="#saturacao-baixa">Saturação Baixa</a>
+      <a href="#tons-de-cinza">Tons de Cinza</a>
+      <a href="#texto-e-imagem">Texto e Imagem</a>
+    </nav>
+  </div>
+
+  <div class="conteudo-area">
+
+    <div class="conteudo" id="variacoes">
+      <h1>Variações da Cor</h1>
+      <p>Na natureza dificilmente encontramos uma cor pura, geralmente a cor é seguida por diversas variações da mesma. Para toda cor que decidirmos utilizar no projeto, ter variações será essencial para compormos a interface.</p>
+    </div>
+
+    <div class="conteudo" id="natural">
+      <h1>Natural</h1>
+      <p>Em uma variação natural, geralmente a saturação aumenta, enquanto o brilho diminui e mudanças são feitas na matiz para ajustar a luminosidade.</p>
+    </div>
+
+    <div class="conteudo" id="artificial">
+      <h1>Artificial</h1>
+      <p>As cores possuem luminosidades diferentes, por isso o amarelo é percebido mais claro, independente dos seus valores de saturação e brilho.</p>
+      <img class="img-conteudo" src="../imgs-pag/escala-cromatica.png" alt="Escala cromática comparando hue e luminosidade percebida">
+    </div>
+
+    <div class="conteudo" id="luminosidade">
+      <h1>Luminosidade</h1>
+      <p>A variação da cor geralmente ocorre na diagonal da matriz HSB.</p>
+      <img class="img-conteudo" src="../imgs-pag/como-fazer-paleta.png" alt="Variação de cor na diagonal da matriz HSB">
+    </div>
+
+    <div class="conteudo" id="saturacao-baixa">
+      <h1>Saturação Baixa</h1>
+      <p>Cores com saturação baixa (tons de cinza) são as cores mais utilizadas nas interfaces. Elas irão compor a base de fundos, títulos, corpo de texto e mais. A saturação apenas aumenta quando diminuímos o brilho.</p>
+
+      <div class="exemplo">
+        <h2>Tons de Cinza</h2>
+        <p>Interfaces de aplicativos como Facebook, YouTube, Instagram, Nubank, Tinder, Netflix e outros geralmente utilizam tons de cinza (neutro ou frio) como a cor de base.</p>
+      </div>
+    </div>
+
+    <div class="conteudo" id="tons-de-cinza">
+      <h1>Tons de Cinza</h1>
+      <p>Cerca de 12 variações são suficientes para te dar bastante flexibilidade na criação de interfaces. Garanta que os valores selecionados funcionem em conjunto (contraste seguindo as diretrizes WCAG).</p>
+      <img class="img-conteudo" src="../imgs-pag/tons-de-cinza.png" alt="Paleta de 12 tons de cinza com exemplos de contraste em modo claro e escuro">
+    </div>
+
+    <div class="conteudo" id="texto-e-imagem">
+      <h1>Texto e Imagem</h1>
+      <p>O texto deve ser legível. Para isso geralmente utilizamos textos em branco em cima de imagens escuras ou textos pretos em cima de imagens claras.</p>
+    </div>
+
+  </div>
+</section>
+
+<script src="../js/page-transition.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="../js/code.js"></script>
+
+</html>

@@ -1,17 +1,18 @@
 :root {
-  --p1: #cbff33;
-  --p2: #4fbf07;
-  --b0: #fff;
-  --b1: #f8f8f8;
-  --b2: #aeaeae;
-  --b3: #717171;
-  --a1: #161616;
-  --a2: #272727;
+  --p1: #d6ff00;
+  --p2: #85ac18;
+  --b0: #fffcf8;
+  --page: #e7e5e0;
+  --b1: #ffffff;
+  --b2: #a7a4a1;
+  --b3: #2c2d35;
+  --a1: #101114;
+  --a2: #202127;
   --gradient1: linear-gradient(to right, var(--a1), var(--a2));
   --gradient2: linear-gradient(to bottom, var(--b1), var(--b0));
   --gradient3: linear-gradient(1060deg, var(--p1), var(--p2));
-  --header-height: 64px;
-  --blue: #0099ff;
+  --header-height: 56px;
+  --blue: #0c8ce9;
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 350ms cubic-bezier(0.4, 0, 0.2, 1);

@@ -2,37 +2,45 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  color: var(--b0);
-  background: var(--gradient1);
-  text-decoration: none;
-  font-size: 14px;
-  border-radius: 8px;
-  padding: 8px 6px;
-  padding-right: 16px;
+  flex-shrink: 0;
+  gap: 2px;
+  height: 32px;
+  padding: 0 10px 0 4px;
+  color: var(--a1);
+  background: transparent;
+  border: 1px solid rgba(16, 17, 20, 0.12);
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 500;
   line-height: 1;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  text-transform: capitalize;
   transition:
-    transform var(--transition-smooth),
-    box-shadow var(--transition-base),
-    filter var(--transition-base);
+    background-color var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .botao-voltar:hover {
-  transform: scale(1.04);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
-  filter: brightness(1.08);
+  background: rgba(16, 17, 20, 0.04);
+  border-color: rgba(16, 17, 20, 0.22);
 }
 
 .botao-voltar:active {
-  transform: scale(0.98);
+  background: rgba(16, 17, 20, 0.08);
+}
+
+.botao-voltar:focus-visible {
+  outline: 2px solid var(--a2);
+  outline-offset: 2px;
 }
 
 .icon-voltar {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
@@ -40,4 +48,13 @@
   width: 100%;
   height: 100%;
   display: block;
+  filter: brightness(0);
+}
+
+@media (max-width: 320px) {
+  .botao-voltar {
+    height: 28px;
+    padding-right: 8px;
+    font-size: 12px;
+  }
 }

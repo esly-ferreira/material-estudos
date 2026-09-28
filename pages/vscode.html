@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>html.page-transition-pending{overflow:hidden;height:100%;filter:blur(12px);opacity:0}</style>
+  <style>
+    html.page-transition-pending {
+      overflow: hidden;
+      height: 100%;
+      filter: blur(12px);
+      opacity: 0
+    }
+  </style>
   <script>document.documentElement.classList.add("page-transition-pending")</script>
   <link rel="stylesheet" href="../style.css">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
@@ -40,21 +47,23 @@
   <div class="sidebar">
     <h1>Filtros</h1>
     <nav class="sidebar-nav">
-      <a href="#plugins">Plugins</a>
-      <a href="#config">Config JSON</a>
       <a href="#extensions">Extensões</a>
+      <a href="#config">Config JSON</a>
+      <a href="#extensions-browser">Extensões navegador</a>
+
     </nav>
   </div>
 
   <div class="conteudo-area">
-    <div class="conteudo" id="plugins">
-      <h1>Plugins</h1>
+    <div class="conteudo" id="extensions">
+      <h1>Extensões</h1>
       <a href="https://marketplace.visualstudio.com/items?itemName=origamid.origamid-next" target="_blank">Tema origamid</a>
       <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank">Formatação</a>
       <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank">Live Server</a>
-      <a href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme" target="_blank">Material Icon Theme</a>
       <a href="https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview" target="_blank">Image Preview</a>
       <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner" target="_blank">Code Runner</a>
+      <a href="https://open-vsx.org/extension/Vue/volar" target="_blank">Vue</a>
+      <a href="https://open-vsx.org/extension/thang-nm/flow-icons" target="_blank">Flow icons</a>
     </div>
 
     <div class="conteudo" id="config">
@@ -86,27 +95,33 @@
   "html.autoClosingTags": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.defaultFormatter": "vscode.html-language-features",
   },
   "editor.bracketPairColorization.enabled": false,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "flow-deep",
   "git.openRepositoryInParentFolders": "always",
   "explorer.confirmDelete": false,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "explorer.confirmPasteNative": false,
   "explorer.confirmDragAndDrop": false,
   "amazonQ.suppressPrompts": {
-    "amazonQChatDisclaimer": true
+    "amazonQChatDisclaimer": true,
   },
   "cSpell.userWords": ["nomecompleto"],
-  "git.suggestSmartCommit": false
-}</code></pre>
+  "git.suggestSmartCommit": false,
+}
+</code>
+</pre>
       </div>
     </div>
 
-    <div class="conteudo" id="extensions">
-      <h1>Extensões</h1>
+    <div class="conteudo" id="extensions-browser">
+      <h1>Extensões navegador</h1>
       <a href="https://chromewebstore.google.com/detail/json-pretty/nflbalmkceonkkhifbifebanhladdgcp" target="_blank">JSON Pretty</a>
+      <a href="https://chromewebstore.google.com/detail/visbug/cdockenadnadldjbbgcallicgledbeoc" target="_blank">VisBug</a>
+      <a href="https://chromewebstore.google.com/detail/clldacgmdnnanihiibdgemajcfkmfhia" target="_blank">Color Picker for Chrome™</a>
+      <a href="https://chromewebstore.google.com/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm" target="_blank">WhatFont</a>
+      <a href="https://chromewebstore.google.com/detail/page-ruler/jcbmcnpepaddcedmjdcmhbekjhbfnlff" target="_blank">Page Ruler</a>
     </div>
 
   </div>

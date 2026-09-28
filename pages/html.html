@@ -150,6 +150,144 @@
       <h1>Formulário</h1>
       <p>Coleta e envio de dados do usuário.</p>
       <div class="h-tags"></div>
+
+      <div class="exemplo">
+        <h2>form</h2>
+        <p>A tag <code>form</code> é utilizada para envolver os campos de um formulário.</p>
+        <p><code>action=""</code> — indica o arquivo/url que será ativado ao enviarmos o formulário.</p>
+        <p><code>method=""</code> — POST (envio de informações) e GET (busca de informações).</p>
+      </div>
+      <div class="code-block code-block--html">
+        <div class="code-block__header">
+          <span class="code-block__lang">HTML</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-html">&lt;form action="/" method="POST"&gt;
+  &lt;div&gt;
+    &lt;label for="nome"&gt;Nome&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome" /&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      <div class="exemplo">
+        <h2>input</h2>
+        <p>Campo mais comum de formulário, possui diferentes tipos.</p>
+        <p><code>type=""</code> — define o tipo: text, checkbox, radio, email, file e outros.</p>
+        <p><code>name=""</code> — define um nome único. É utilizado pelo JavaScript ou Back End para puxarmos o valor do campo.</p>
+        <p><code>label</code> — define o rótulo. <code>for=""</code> relaciona a label e o <code>id=""</code> do campo.</p>
+      </div>
+      <div class="code-block code-block--html">
+        <div class="code-block__header">
+          <span class="code-block__lang">HTML</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-html">&lt;form&gt;
+  &lt;div&gt;
+    &lt;label for="usuario"&gt;Usuário&lt;/label&gt;
+    &lt;input type="text" id="usuario" name="usuario" /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for="senha"&gt;Senha&lt;/label&gt;
+    &lt;input type="password" id="senha" name="senha" /&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+      </div>
+
+      <div class="exemplo">
+        <h2>button</h2>
+        <p>Cria um botão, utilizado para diferentes interações na página.</p>
+        <p><code>form &gt; button</code> — button dentro de form envia/ativa a action do form.</p>
+      </div>
+      <div class="code-block code-block--html">
+        <div class="code-block__header">
+          <span class="code-block__lang">HTML</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-html">&lt;button&gt;Enviar&lt;/button&gt;
+
+&lt;button class="comprar"&gt;Compre Hoje&lt;/button&gt;</code></pre>
+      </div>
+
+      <div class="exemplo">
+        <h2>Atributos</h2>
+        <p><code>placeholder=""</code> — texto quando o formulário não está preenchido (dica de preenchimento).</p>
+        <p><code>required</code> — define o input como obrigatório.</p>
+        <p><code>disabled</code> — desabilita o input.</p>
+        <p><code>minlength</code> e <code>maxlength</code> — mínimo e máximo de caracteres.</p>
+        <p><code>value</code> — valor inicial do formulário.</p>
+      </div>
+      <div class="code-block code-block--html">
+        <div class="code-block__header">
+          <span class="code-block__lang">HTML</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-html">&lt;div&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input
+    type="email"
+    id="email"
+    name="email"
+    required
+    placeholder="nome@email.com"
+  /&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="exemplo">
+        <h2>checkbox e radio</h2>
+        <p><code>checkbox</code> — caixa que pode ser marcada/desmarcada.</p>
+        <p><code>radio</code> — grupo de inputs com o mesmo <code>name</code>; apenas um pode ser selecionado.</p>
+      </div>
+      <div class="code-block code-block--html">
+        <div class="code-block__header">
+          <span class="code-block__lang">HTML</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-html">&lt;div class="checkbox"&gt;
+  &lt;input type="checkbox" id="marketing" name="marketing" value="marketing" /&gt;
+  &lt;label for="marketing"&gt;Desejo receber avisos de promoções.&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="checkbox"&gt;
+  &lt;input type="checkbox" id="termos" name="termos" value="termos" /&gt;
+  &lt;label for="termos"&gt;Li os termos e condições.&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Entrega:&lt;/p&gt;
+&lt;div&gt;
+  &lt;input type="radio" id="retirada" name="entrega" value="retirada" /&gt;
+  &lt;label for="retirada"&gt;Retirada&lt;/label&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;input type="radio" id="sedex" name="entrega" value="sedex" /&gt;
+  &lt;label for="sedex"&gt;Sedex&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="exemplo">
+        <h2>select</h2>
+        <p>Campo de seleção com diferentes opções (<code>option</code>).</p>
+      </div>
+      <div class="code-block code-block--html">
+        <div class="code-block__header">
+          <span class="code-block__lang">HTML</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-html">&lt;label for="parcelas"&gt;Parcelas&lt;/label&gt;
+&lt;select name="parcelas" id="parcelas"&gt;
+  &lt;option value="1x"&gt;1x de R$ 1200&lt;/option&gt;
+  &lt;option value="3x"&gt;3x de R$ 400&lt;/option&gt;
+  &lt;option value="6x"&gt;6x de R$ 200&lt;/option&gt;
+  &lt;option value="12x"&gt;12x de R$ 100&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+      </div>
+
+      <div class="exemplo">
+        <h2>textarea</h2>
+        <p>Área de texto, para valores que ocupem mais de uma linha.</p>
+        <p><code>rows=""</code> — indica o tamanho de linhas visíveis.</p>
+      </div>
+      <div class="code-block code-block--html">
+        <div class="code-block__header">
+          <span class="code-block__lang">HTML</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-html">&lt;label for="mensagem"&gt;Mensagem&lt;/label&gt;
+&lt;textarea id="mensagem" name="mensagem" rows="5"&gt;&lt;/textarea&gt;</code></pre>
+      </div>
     </div>
 
     <div class="conteudo" id="midia">

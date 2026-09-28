@@ -1,0 +1,873 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html.page-transition-pending {
+      overflow: hidden;
+      height: 100%;
+      filter: blur(12px);
+      opacity: 0
+    }
+  </style>
+  <script>document.documentElement.classList.add("page-transition-pending")</script>
+  <link rel="stylesheet" href="../style.css">
+  <!-- Módulos (sem reset.css para não sobrescrever o shell do site) -->
+  <link rel="stylesheet" href="../arquivos-modulos/variables.css">
+  <link rel="stylesheet" href="../arquivos-modulos/colors.css">
+  <link rel="stylesheet" href="../arquivos-modulos/typography.css">
+  <link rel="stylesheet" href="../arquivos-modulos/material-symbols.css">
+  <link rel="stylesheet" href="../arquivos-modulos/spacing-grids-radius.css">
+  <link rel="stylesheet" href="../arquivos-modulos/animations.css">
+  <link rel="stylesheet" href="../arquivos-modulos/shadows.css">
+  <link rel="stylesheet" href="../arquivos-modulos/inputs.css">
+  <link rel="stylesheet" href="../arquivos-modulos/buttons.css">
+  <link rel="stylesheet" href="../arquivos-modulos/alert.css">
+  <link rel="stylesheet" href="../arquivos-modulos/modal.css">
+  <link rel="stylesheet" href="../arquivos-modulos/tooltips.css">
+  <link rel="stylesheet" href="../arquivos-modulos/iconTolltip.css">
+  <link rel="stylesheet" href="../arquivos-modulos/scrollbar.css">
+  <link rel="stylesheet" href="../arquivos-modulos/datepicker.css">
+  <link rel="stylesheet" href="../arquivos-modulos/dropdown.css">
+  <link rel="stylesheet" href="../arquivos-modulos/table.css">
+  <link rel="stylesheet" href="../arquivos-modulos/pagination.css">
+  <link rel="stylesheet" href="../arquivos-modulos/status.css">
+  <link rel="stylesheet" href="../arquivos-modulos/page.css">
+  <link rel="stylesheet" href="../arquivos-modulos/panel-card.css">
+  <link rel="stylesheet" href="../arquivos-modulos/info-stat.css">
+  <link rel="stylesheet" href="../arquivos-modulos/card.css">
+  <link rel="stylesheet" href="../arquivos-modulos/calendars.css">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <title>Modulos de Estilos</title>
+</head>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <a href="../index.html" class="header-logo-link">
+        <span class="header-icon">
+          <img src="../imgs/logo.svg" alt="Logo">
+        </span>
+      </a>
+      <div class="header-text">
+        <h1>Material <span class="header-title-muted">de Estudo</span></h1>
+      </div>
+    </div>
+    <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
+  </div>
+</header>
+
+<section class="bg">
+  <div class="capa">
+    <div class="imagem-card">
+      <img class="card-logo" src="../imgs/yellow.webp" alt="">
+    </div>
+    <img class="icon-banner" src="../icons/css.svg" alt="">
+  </div>
+</section>
+
+<section class="content bg">
+  <div class="sidebar">
+    <h1>Filtros</h1>
+    <nav class="sidebar-nav">
+      <a href="#buttons">Buttons</a>
+      <a href="#inputs">Inputs</a>
+      <a href="#alerts">Alerts</a>
+      <a href="#cards">Cards</a>
+      <a href="#panel-card">Panel Card</a>
+      <a href="#info-stat">Info Stat</a>
+      <a href="#modal">Modal</a>
+      <a href="#dropdown">Dropdown</a>
+      <a href="#tooltips">Tooltips</a>
+      <a href="#table">Table</a>
+      <a href="#pagination">Pagination</a>
+      <a href="#status">Status</a>
+      <a href="#datepicker">Datepicker</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#page">Page</a>
+      <a href="#shadows">Shadows</a>
+      <a href="#spacing">Spacing & Grids</a>
+      <a href="#typography">Typography</a>
+    </nav>
+  </div>
+
+  <div class="conteudo-area">
+
+    <div class="conteudo" id="buttons">
+      <h1>Buttons</h1>
+      <p>Variantes de <code>buttons.css</code>.</p>
+      <div class="exemplo">
+        <h1>Primários</h1>
+        <div class="caixa-exemplo">
+          <button type="button" class="md-button">
+            <span class="material-symbols-rounded">add</span>
+            Primary
+          </button>
+          <button type="button" class="md-button-mini">
+            <span class="material-symbols-rounded">add</span>
+            Mini
+          </button>
+          <button type="button" class="md-button-secondary">
+            <span class="material-symbols-rounded">tune</span>
+            Secondary
+          </button>
+        </div>
+      </div>
+      <div class="exemplo">
+        <h1>Danger / Warning</h1>
+        <div class="caixa-exemplo">
+          <button type="button" class="md-button-danger">
+            <span class="material-symbols-rounded">delete</span>
+            Danger
+          </button>
+          <button type="button" class="md-button-mini-danger">Mini danger</button>
+          <button type="button" class="md-button-warning">
+            <span class="material-symbols-rounded">warning</span>
+            Warning
+          </button>
+          <button type="button" class="md-button-mini-warning">Mini warning</button>
+        </div>
+      </div>
+      <div class="exemplo">
+        <h1>Toggle</h1>
+        <div class="caixa-exemplo">
+          <label class="md-toggle">
+            <input type="checkbox" class="md-toggle__input" checked>
+            <span class="md-toggle__track" aria-hidden="true">
+              <span class="md-toggle__thumb"></span>
+            </span>
+          </label>
+          <label class="md-toggle">
+            <input type="checkbox" class="md-toggle__input">
+            <span class="md-toggle__track" aria-hidden="true">
+              <span class="md-toggle__thumb"></span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="inputs">
+      <h1>Inputs</h1>
+      <p>Campos de <code>inputs.css</code>.</p>
+      <div class="caixa-exemplo">
+        <div class="form-row">
+          <div class="form-card sm">
+            <label for="demo-sm">SM</label>
+            <input id="demo-sm" type="text" placeholder="Curto">
+          </div>
+          <div class="form-card md">
+            <label for="demo-md">MD</label>
+            <input id="demo-md" type="text" placeholder="Médio">
+          </div>
+          <div class="form-card lg">
+            <label for="demo-lg">LG</label>
+            <select id="demo-lg">
+              <option>Opção A</option>
+              <option>Opção B</option>
+            </select>
+          </div>
+          <div class="form-card fill is-error">
+            <label for="demo-error">Com erro</label>
+            <input id="demo-error" class="input-error" type="text" value="Inválido">
+            <span class="input-error-message">Campo obrigatório</span>
+          </div>
+          <div class="form-card fill">
+            <label for="demo-ta">Textarea</label>
+            <textarea id="demo-ta" class="textarea--md" rows="3" placeholder="Mensagem…"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="alerts">
+      <h1>Alerts</h1>
+      <p>Objetos de <code>alert.css</code> (ícones SVG em <code>assets/icons</code> se existirem).</p>
+      <div class="caixa-exemplo">
+        <div class="alert alert--success">
+          <div class="alert__icon" aria-hidden="true"></div>
+          <div class="alert__body">
+            <p class="alert__title">Sucesso</p>
+            <p class="alert__text">Operação concluída com sucesso.</p>
+            <button type="button" class="alert__action">Desfazer</button>
+          </div>
+          <button type="button" class="alert__close" aria-label="Fechar">×</button>
+        </div>
+        <br>
+        <div class="alert alert--warning">
+          <div class="alert__icon" aria-hidden="true"></div>
+          <div class="alert__body">
+            <p class="alert__title">Atenção</p>
+            <p class="alert__text">Revise os dados antes de continuar.</p>
+          </div>
+          <button type="button" class="alert__close" aria-label="Fechar">×</button>
+        </div>
+        <br>
+        <div class="alert alert--error">
+          <div class="alert__icon" aria-hidden="true"></div>
+          <div class="alert__body">
+            <p class="alert__title">Erro</p>
+            <p class="alert__text">Não foi possível salvar.</p>
+          </div>
+          <button type="button" class="alert__close" aria-label="Fechar">×</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="cards">
+      <h1>Cards</h1>
+      <p>Objetos de <code>card.css</code>.</p>
+      <article class="card card--sm">
+        <header class="card__header">
+          <h3 class="card__title">Card SM</h3>
+          <p class="card__meta">Meta</p>
+        </header>
+        <div class="card__body">Corpo do card com texto de exemplo.</div>
+        <footer class="card__footer">
+          <button type="button" class="md-button-mini">Ação</button>
+        </footer>
+      </article>
+
+    </div>
+
+    <div class="conteudo" id="panel-card">
+      <h1>Panel Card</h1>
+      <p>Objeto de <code>panel-card.css</code>.</p>
+      <div class="panel-card">
+        <div class="panel-card__header">
+          <h3 class="panel-card__title text-display-xs font-semibold">Resumo</h3>
+          <p class="panel-card__meta text-text-sm neutral-600">Atualizado agora</p>
+        </div>
+        <div class="panel-card__body">
+          <div class="panel-card__grid">
+            <div class="info-stat">
+              <span class="material-symbols-rounded info-stat__icon">group</span>
+              <div class="info-stat__content">
+                <span class="info-stat__title">Usuários</span>
+                <p class="info-stat__value">1.248</p>
+                <p class="info-stat__description">Ativos no mês</p>
+              </div>
+            </div>
+            <div class="info-stat">
+              <span class="material-symbols-rounded info-stat__icon">payments</span>
+              <div class="info-stat__content">
+                <span class="info-stat__title">Receita</span>
+                <p class="info-stat__value">R$ 42k</p>
+                <p class="info-stat__description">+12% vs anterior</p>
+              </div>
+            </div>
+            <div class="info-stat">
+              <span class="material-symbols-rounded info-stat__icon">task_alt</span>
+              <div class="info-stat__content">
+                <span class="info-stat__title">Tarefas</span>
+                <p class="info-stat__value">86%</p>
+                <p class="info-stat__description">Concluídas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-card__footer">
+          <button type="button" class="md-button-secondary">Detalhes</button>
+          <button type="button" class="md-button">Exportar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="info-stat">
+      <h1>Info Stat</h1>
+      <p>Objeto isolado de <code>info-stat.css</code>.</p>
+      <div class="caixa-exemplo">
+        <div class="info-stat">
+          <span class="material-symbols-rounded info-stat__icon">trending_up</span>
+          <div class="info-stat__content">
+            <span class="info-stat__title">Crescimento</span>
+            <p class="info-stat__value">+18%</p>
+            <p class="info-stat__description">Comparado ao trimestre anterior</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="modal">
+      <h1>Modal</h1>
+      <p>Painel de <code>modal.css</code> (sem overlay fixo, só o objeto).</p>
+
+      <div class="modal modal--md">
+        <div class="modal__header">
+          <h2 class="modal__title">Título do modal</h2>
+          <button type="button" class="modal__close" aria-label="Fechar">
+            <span class="material-symbols-rounded">close</span>
+          </button>
+        </div>
+        <div class="modal__body">
+          <p class="text-text-md neutral-600">Conteúdo interno do modal para visualização do componente.</p>
+          <div class="page-actions-interior">
+            <button type="button" class="md-button-secondary">Cancelar</button>
+            <button type="button" class="md-button">Confirmar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="conteudo" id="dropdown">
+      <h1>Dropdown</h1>
+      <p>Objeto de <code>dropdown.css</code> (aberto com <code>.is-open</code>).</p>
+      <div class="caixa-exemplo">
+        <div class="dropdown is-open" style="max-width: 20rem; margin-bottom: 10rem;">
+          <span class="dropdown__label">Status</span>
+          <button type="button" class="dropdown__trigger">
+            <span class="dropdown__value">Ativo</span>
+            <span class="material-symbols-rounded">expand_more</span>
+          </button>
+          <ul class="dropdown__menu">
+            <li class="dropdown__option is-selected">
+              Ativo
+              <span class="material-symbols-rounded">check</span>
+            </li>
+            <li class="dropdown__option">
+              Pendente
+              <span class="material-symbols-rounded">check</span>
+            </li>
+            <li class="dropdown__option">
+              Inativo
+              <span class="material-symbols-rounded">check</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="tooltips">
+      <h1>Tooltips</h1>
+      <p>Objetos de <code>tooltips.css</code> e <code>iconTolltip.css</code> (passe o mouse).</p>
+      <div class="caixa-exemplo">
+        <span class="tooltip" tabindex="0">
+          <button type="button" class="md-button-mini">Hover</button>
+          <span class="tooltip__content" role="tooltip">Tooltip padrão</span>
+        </span>
+        &nbsp;&nbsp;
+        <h2 class="page-section__heading">
+          <span class="tooltip tooltip--icon" tabindex="0">
+            <span class="material-symbols-rounded sm tooltip__icon" aria-hidden="true">info</span>
+            <span class="tooltip__content" role="tooltip">Ajuda da seção</span>
+          </span>
+          Título com ícone
+        </h2>
+      </div>
+    </div>
+
+    <div class="conteudo" id="table">
+      <h1>Table</h1>
+      <p>Objeto de <code>table.css</code>.</p>
+      <div class="table-card">
+        <div class="table-scroll">
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="table__check">
+                  <input type="checkbox" aria-label="Selecionar todos">
+                </th>
+                <th>
+                  <button type="button" class="table__sort">
+                    Nome
+                    <span class="material-symbols-rounded sm">unfold_more</span>
+                  </button>
+                </th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table__check"><input type="checkbox" aria-label="Selecionar Ana Silva"></td>
+                <td>
+                  <div class="table-user">
+                    <span class="table-user__avatar">A</span>
+                    <div class="table-user__meta">
+                      <span class="table-user__name table__primary">Ana Silva</span>
+                      <span class="table-user__sub">ana@email.com</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="table-badge table-badge--success">Ativo</span></td>
+                <td>
+                  <div class="table__actions">
+                    <button type="button" class="table__action md-button-mini">Editar</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td class="table__check"><input type="checkbox" aria-label="Selecionar Bruno Costa"></td>
+                <td>
+                  <div class="table-user">
+                    <span class="table-user__avatar">B</span>
+                    <div class="table-user__meta">
+                      <span class="table-user__name table__primary">Bruno Costa</span>
+                      <span class="table-user__sub">bruno@email.com</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="table-badge table-badge--neutral">Pendente</span></td>
+                <td>
+                  <div class="table__actions">
+                    <button type="button" class="table__action md-button-mini">Editar</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-card__footer table-card__footer--spread">
+          <nav class="pagination" aria-label="Paginação">
+            <button type="button" class="pagination__btn" disabled>
+              <span class="material-symbols-rounded sm">chevron_left</span>
+              Anterior
+            </button>
+            <button type="button" class="pagination__page is-active">1</button>
+            <button type="button" class="pagination__page">2</button>
+            <span class="pagination__ellipsis">…</span>
+            <button type="button" class="pagination__page">8</button>
+            <button type="button" class="pagination__btn">
+              Próximo
+              <span class="material-symbols-rounded sm">chevron_right</span>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="pagination">
+      <h1>Pagination</h1>
+      <p>Objeto isolado de <code>pagination.css</code>.</p>
+      <div class="caixa-exemplo">
+        <nav class="pagination pagination--spread" aria-label="Paginação spread">
+          <button type="button" class="pagination__btn">
+            <span class="material-symbols-rounded sm">chevron_left</span>
+          </button>
+          <div class="pagination__pages">
+            <button type="button" class="pagination__page is-active">1</button>
+            <button type="button" class="pagination__page">2</button>
+            <button type="button" class="pagination__page">3</button>
+          </div>
+          <button type="button" class="pagination__btn">
+            <span class="material-symbols-rounded sm">chevron_right</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+
+    <div class="conteudo" id="status">
+      <h1>Status</h1>
+      <p>Objetos de <code>status.css</code>.</p>
+      <div class="caixa-exemplo">
+        <p><span class="status-text status-text--success">Sim</span> ·
+          <span class="status-text status-text--danger">Não</span> ·
+          <span class="status-text status-text--neutral">N/A</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="conteudo" id="datepicker">
+      <h1>Datepicker</h1>
+      <p>Objetos de <code>datepicker.css</code>.</p>
+      <div class="datepicker-field" style="max-width: 20rem; margin-bottom: 1rem;">
+        <input class="datepicker-field__input" type="text" value="09/08/2026" readonly>
+        <button type="button" class="datepicker-field__icon" aria-label="Abrir calendário">
+          <span class="material-symbols-rounded sm">calendar_month</span>
+        </button>
+      </div>
+      <div class="datepicker">
+        <div class="datepicker__header">
+          <button type="button" class="datepicker__nav" aria-label="Anterior">
+            <span class="material-symbols-rounded sm">chevron_left</span>
+          </button>
+          <h3 class="datepicker__month">Agosto 2026</h3>
+          <button type="button" class="datepicker__nav" aria-label="Próximo">
+            <span class="material-symbols-rounded sm">chevron_right</span>
+          </button>
+        </div>
+        <div class="datepicker__toolbar">
+          <input class="datepicker__selected" type="text" value="09/08/2026" readonly>
+          <button type="button" class="datepicker__today">Hoje</button>
+        </div>
+        <div class="datepicker__weekdays">
+          <span class="datepicker__weekday">D</span>
+          <span class="datepicker__weekday">S</span>
+          <span class="datepicker__weekday">T</span>
+          <span class="datepicker__weekday">Q</span>
+          <span class="datepicker__weekday">Q</span>
+          <span class="datepicker__weekday">S</span>
+          <span class="datepicker__weekday">S</span>
+        </div>
+        <div class="datepicker__grid">
+          <button type="button" class="datepicker__day datepicker__day--outside">27</button>
+          <button type="button" class="datepicker__day datepicker__day--outside">28</button>
+          <button type="button" class="datepicker__day datepicker__day--outside">29</button>
+          <button type="button" class="datepicker__day datepicker__day--outside">30</button>
+          <button type="button" class="datepicker__day datepicker__day--outside">31</button>
+          <button type="button" class="datepicker__day">1</button>
+          <button type="button" class="datepicker__day">2</button>
+          <button type="button" class="datepicker__day">3</button>
+          <button type="button" class="datepicker__day">4</button>
+          <button type="button" class="datepicker__day">5</button>
+          <button type="button" class="datepicker__day">6</button>
+          <button type="button" class="datepicker__day">7</button>
+          <button type="button" class="datepicker__day">8</button>
+          <button type="button" class="datepicker__day datepicker__day--today datepicker__day--selected datepicker__day--dot">9</button>
+          <button type="button" class="datepicker__day">10</button>
+          <button type="button" class="datepicker__day">11</button>
+          <button type="button" class="datepicker__day">12</button>
+          <button type="button" class="datepicker__day">13</button>
+          <button type="button" class="datepicker__day">14</button>
+          <button type="button" class="datepicker__day">15</button>
+          <button type="button" class="datepicker__day">16</button>
+          <button type="button" class="datepicker__day">17</button>
+          <button type="button" class="datepicker__day">18</button>
+          <button type="button" class="datepicker__day">19</button>
+          <button type="button" class="datepicker__day">20</button>
+          <button type="button" class="datepicker__day">21</button>
+          <button type="button" class="datepicker__day">22</button>
+          <button type="button" class="datepicker__day">23</button>
+          <button type="button" class="datepicker__day">24</button>
+          <button type="button" class="datepicker__day">25</button>
+          <button type="button" class="datepicker__day">26</button>
+          <button type="button" class="datepicker__day">27</button>
+          <button type="button" class="datepicker__day">28</button>
+          <button type="button" class="datepicker__day">29</button>
+          <button type="button" class="datepicker__day">30</button>
+          <button type="button" class="datepicker__day">31</button>
+          <button type="button" class="datepicker__day datepicker__day--outside">1</button>
+          <button type="button" class="datepicker__day datepicker__day--outside">2</button>
+          <button type="button" class="datepicker__day datepicker__day--outside">3</button>
+          <button type="button" class="datepicker__day datepicker__day--outside">4</button>
+          <button type="button" class="datepicker__day datepicker__day--outside">5</button>
+          <button type="button" class="datepicker__day datepicker__day--outside">6</button>
+        </div>
+        <div class="datepicker__footer">
+          <button type="button" class="md-button-secondary">Cancelar</button>
+          <button type="button" class="md-button">Aplicar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="calendar">
+      <h1>Calendar</h1>
+      <p>Objeto de <code>calendars.css</code> (amostra reduzida).</p>
+      <div class="calendar">
+        <header class="calendar__toolbar">
+          <div class="calendar__leading">
+            <div class="calendar-date" aria-hidden="true">
+              <span class="calendar-date__month">AGO</span>
+              <span class="calendar-date__day">9</span>
+            </div>
+            <div class="calendar__heading">
+              <h2 class="calendar__title">Agosto 2026</h2>
+              <p class="calendar__range">1 ago 2026 – 31 ago 2026</p>
+            </div>
+          </div>
+          <div class="calendar__actions">
+            <div class="calendar__nav">
+              <button type="button" class="calendar__nav-btn" aria-label="Anterior">
+                <span class="material-symbols-rounded sm">chevron_left</span>
+              </button>
+              <button type="button" class="calendar__nav-today">Hoje</button>
+              <button type="button" class="calendar__nav-btn" aria-label="Próximo">
+                <span class="material-symbols-rounded sm">chevron_right</span>
+              </button>
+            </div>
+          </div>
+        </header>
+        <div class="calendar__weekdays">
+          <div class="calendar__weekday">Dom</div>
+          <div class="calendar__weekday">Seg</div>
+          <div class="calendar__weekday">Ter</div>
+          <div class="calendar__weekday">Qua</div>
+          <div class="calendar__weekday">Qui</div>
+          <div class="calendar__weekday">Sex</div>
+          <div class="calendar__weekday">Sáb</div>
+        </div>
+        <div class="calendar__grid">
+          <div class="calendar__day calendar__day--outside"><span class="calendar__day-num">27</span></div>
+          <div class="calendar__day calendar__day--outside"><span class="calendar__day-num">28</span></div>
+          <div class="calendar__day calendar__day--outside"><span class="calendar__day-num">29</span></div>
+          <div class="calendar__day calendar__day--outside"><span class="calendar__day-num">30</span></div>
+          <div class="calendar__day calendar__day--outside"><span class="calendar__day-num">31</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">1</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">2</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">3</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">4</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">5</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">6</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">7</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">8</span></div>
+          <div class="calendar__day calendar__day--today">
+            <span class="calendar__day-num">9</span>
+            <div class="calendar__events">
+              <button type="button" class="calendar-event calendar-event--brand">
+                <span class="calendar-event__title">Standup</span>
+                <span class="calendar-event__time">9:00</span>
+              </button>
+            </div>
+          </div>
+          <div class="calendar__day"><span class="calendar__day-num">10</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">11</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">12</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">13</span></div>
+          <div class="calendar__day"><span class="calendar__day-num">14</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="page">
+      <h1>Page</h1>
+      <p>Layout de <code>page.css</code>.</p>
+      <div class="caixa-exemplo">
+        <div class="page-header">
+          <div class="page-header__title">
+            <h2 class="text-display-sm font-semibold">Cabeçalho da página</h2>
+            <p class="text-text-md neutral-600">Descrição curta da seção.</p>
+          </div>
+        </div>
+        <div class="page-body">
+          <div class="page-section">
+            <h3 class="text-display-xs font-semibold">Seção</h3>
+            <p class="text-text-md neutral-600">Conteúdo da seção de página.</p>
+          </div>
+          <div class="page-actions">
+            <button type="button" class="md-button-secondary">Cancelar</button>
+            <button type="button" class="md-button">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="shadows">
+      <h1>Shadows</h1>
+      <p>Tokens de <code>shadows.css</code> (<code>--shadow-*</code>).</p>
+      <div class="caixa-exemplo">
+        <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-8); padding: var(--spacing-6); background: var(--color-neutral-50); border-radius: 8px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3); width: 7.5rem;">
+            <div style="width: 5rem; height: 5rem; border-radius: 12px; background: var(--color-white); box-shadow: var(--shadow-xs);"></div>
+            <span class="text-text-sm font-medium">shadow-xs</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3); width: 7.5rem;">
+            <div style="width: 5rem; height: 5rem; border-radius: 12px; background: var(--color-white); box-shadow: var(--shadow-sm);"></div>
+            <span class="text-text-sm font-medium">shadow-sm</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3); width: 7.5rem;">
+            <div style="width: 5rem; height: 5rem; border-radius: 12px; background: var(--color-white); box-shadow: var(--shadow-md);"></div>
+            <span class="text-text-sm font-medium">shadow-md</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3); width: 7.5rem;">
+            <div style="width: 5rem; height: 5rem; border-radius: 12px; background: var(--color-white); box-shadow: var(--shadow-lg);"></div>
+            <span class="text-text-sm font-medium">shadow-lg</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3); width: 7.5rem;">
+            <div style="width: 5rem; height: 5rem; border-radius: 12px; background: var(--color-white); box-shadow: var(--shadow-xl);"></div>
+            <span class="text-text-sm font-medium">shadow-xl</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3); width: 7.5rem;">
+            <div style="width: 5rem; height: 5rem; border-radius: 12px; background: var(--color-white); box-shadow: var(--shadow-2xl);"></div>
+            <span class="text-text-sm font-medium">shadow-2xl</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-3); width: 7.5rem;">
+            <div style="width: 5rem; height: 5rem; border-radius: 12px; background: var(--color-white); box-shadow: var(--shadow-3xl);"></div>
+            <span class="text-text-sm font-medium">shadow-3xl</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="spacing">
+      <h1>Spacing &amp; Grids</h1>
+      <p>Tokens de <code>spacing-grids-radius.css</code> (spacing, containers e grids).</p>
+
+      <div class="exemplo">
+        <h2>Spacing</h2>
+        <div class="caixa-exemplo">
+          <div style="display: flex; flex-direction: column; gap: var(--spacing-3);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-1</code>
+              <div style="height: 1.25rem; width: var(--spacing-1); background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">4px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-2</code>
+              <div style="height: 1.25rem; width: var(--spacing-2); background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">8px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-3</code>
+              <div style="height: 1.25rem; width: var(--spacing-3); background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">12px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-4</code>
+              <div style="height: 1.25rem; width: var(--spacing-4); background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">16px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-5</code>
+              <div style="height: 1.25rem; width: var(--spacing-5); background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">20px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-6</code>
+              <div style="height: 1.25rem; width: var(--spacing-6); background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">24px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-8</code>
+              <div style="height: 1.25rem; width: var(--spacing-8); background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">32px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-10</code>
+              <div style="height: 1.25rem; width: var(--spacing-10); background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">40px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-12</code>
+              <div style="height: 1.25rem; width: var(--spacing-12); background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">48px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-16</code>
+              <div style="height: 1.25rem; width: var(--spacing-16); max-width: 100%; background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">64px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-20</code>
+              <div style="height: 1.25rem; width: var(--spacing-20); max-width: 100%; background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">80px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-24</code>
+              <div style="height: 1.25rem; width: var(--spacing-24); max-width: 100%; background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">96px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-32</code>
+              <div style="height: 1.25rem; width: var(--spacing-32); max-width: 100%; background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">128px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-40</code>
+              <div style="height: 1.25rem; width: var(--spacing-40); max-width: 100%; background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">160px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-48</code>
+              <div style="height: 1.25rem; width: var(--spacing-48); max-width: 100%; background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">192px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-56</code>
+              <div style="height: 1.25rem; width: var(--spacing-56); max-width: 100%; background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">224px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 7rem; flex-shrink: 0;">--spacing-64</code>
+              <div style="height: 1.25rem; width: var(--spacing-64); max-width: 100%; background: var(--color-brand-500); border-radius: 2px;"></div>
+              <span class="text-text-xs neutral-500">256px</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exemplo">
+        <h2>Containers</h2>
+        <div class="caixa-exemplo">
+          <div style="display: flex; flex-direction: column; gap: var(--spacing-3);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 8rem; flex-shrink: 0;">--container-sm</code>
+              <div style="height: 1.5rem; max-width: 100%; width: calc(var(--container-sm) * 0.2); background: var(--color-sky-500); border-radius: 4px;"></div>
+              <span class="text-text-xs neutral-500">640px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 8rem; flex-shrink: 0;">--container-md</code>
+              <div style="height: 1.5rem; max-width: 100%; width: calc(var(--container-md) * 0.2); background: var(--color-sky-500); border-radius: 4px;"></div>
+              <span class="text-text-xs neutral-500">768px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 8rem; flex-shrink: 0;">--container-lg</code>
+              <div style="height: 1.5rem; max-width: 100%; width: calc(var(--container-lg) * 0.2); background: var(--color-sky-500); border-radius: 4px;"></div>
+              <span class="text-text-xs neutral-500">1024px</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: var(--spacing-3);">
+              <code class="text-text-sm" style="width: 8rem; flex-shrink: 0;">--container-xl</code>
+              <div style="height: 1.5rem; max-width: 100%; width: calc(var(--container-xl) * 0.2); background: var(--color-sky-500); border-radius: 4px;"></div>
+              <span class="text-text-xs neutral-500">1280px</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="exemplo">
+        <h2>Grids</h2>
+        <div class="caixa-exemplo">
+          <p class="text-text-sm neutral-600" style="margin-bottom: var(--spacing-4);">
+            Desktop 12 · Tablet 6 · Mobile 5 colunas · gutters
+            <code>--grid-desktop-gutter</code> /
+            <code>--grid-tablet-gutter</code> /
+            <code>--grid-mobile-gutter</code>
+          </p>
+          <div style="display: grid; grid-template-columns: var(--container-grid-12); gap: var(--grid-desktop-gutter); margin-bottom: var(--spacing-6);">
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-200); border-radius: 4px;"></div>
+          </div>
+          <p class="text-text-xs neutral-500" style="margin-bottom: var(--spacing-2);">--container-grid-12</p>
+          <div style="display: grid; grid-template-columns: var(--container-grid-6); gap: var(--grid-tablet-gutter); margin-bottom: var(--spacing-6);">
+            <div style="height: 2rem; background: var(--color-brand-300); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-300); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-300); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-300); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-300); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-300); border-radius: 4px;"></div>
+          </div>
+          <p class="text-text-xs neutral-500" style="margin-bottom: var(--spacing-2);">--container-grid-6</p>
+          <div style="display: grid; grid-template-columns: var(--container-grid-5); gap: var(--grid-mobile-gutter);">
+            <div style="height: 2rem; background: var(--color-brand-400); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-400); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-400); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-400); border-radius: 4px;"></div>
+            <div style="height: 2rem; background: var(--color-brand-400); border-radius: 4px;"></div>
+          </div>
+          <p class="text-text-xs neutral-500" style="margin-top: var(--spacing-2);">--container-grid-5</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="typography">
+      <h1>Typography</h1>
+      <p>Classes de <code>typography.css</code>.</p>
+      <div class="caixa-exemplo">
+        <div class="text-display-lg font-bold">Display LG</div>
+        <div class="text-display-md font-semibold">Display MD</div>
+        <div class="text-display-sm font-medium">Display SM</div>
+        <div class="text-text-xl font-regular">Text XL</div>
+        <div class="text-text-md font-regular">Text MD regular</div>
+        <div class="text-text-sm font-semibold">Text SM semibold</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="../js/page-transition.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="../js/code.js"></script>
+
+</html>

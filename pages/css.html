@@ -53,6 +53,8 @@
       <a href="#grid">Display grid</a>
       <a href="#pseudo-classes">Pseudo-classes</a>
       <a href="#seletores">Seletores</a>
+      <a href="#clean-css">Clean CSS</a>
+      <a href="#troca-de-tema">Troca de tema</a>
     </nav>
   </div>
 
@@ -164,7 +166,7 @@ dd {
       <p>Demonstrações visuais das propriedades de CSS Grid.</p>
 
       <div class="exemplo">
-        <h2>grid-template: columns | rows</h2>
+        <h2>grid-template: columns | rows | areas</h2>
 
         <h2>gap</h2>
         <div class="caixa-exemplo g-row">
@@ -185,6 +187,15 @@ dd {
           <div class="g-item" data-label="1fr 1fr" data-grid="g-grid--rows-2" data-n="2"></div>
           <div class="g-item" data-label="repeat(3, 10px)" data-grid="g-grid--rows-3-10px" data-n="3"></div>
           <div class="g-item" data-label="10px auto 10px" data-grid="g-grid--rows-10-auto" data-fill="c,a:g-dots:3,c"></div>
+        </div>
+
+        <h2>grid-template-areas</h2>
+        <p>
+          Com o <code>display: grid</code> é possível definirmos colunas e linhas
+          nomeadas para organizarmos os elementos que estiverem dentro do grid.
+        </p>
+        <div class="caixa-exemplo g-row">
+          <div class="g-item" data-label='"a a a b b" / "c c d b b" / "c c e e e"' data-grid="g-grid--areas" data-fill="a:g-cell--area-a,a:g-cell--area-b,a:g-cell--area-c,a:g-cell--area-d,a:g-cell--area-e"></div>
         </div>
       </div>
 
@@ -445,6 +456,114 @@ a:visited {
       </div>
     </div>
 
+    <div class="conteudo" id="clean-css">
+      <h1>Clean CSS</h1>
+      <p>Programa de linha de comando (CLI) utilizado para otimizar o CSS (diminuir o tamanho e concatenar diferentes arquivos em um único).</p>
+      <p><code>clean-css-cli</code></p>
+
+      <div class="exemplo">
+        <h2>Remover Globalmente</h2>
+      </div>
+      <div class="code-block code-block--js">
+        <div class="code-block__header">
+          <span class="code-block__lang">Bash</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-bash">npm remove -g NOMEDOPACOTE</code></pre>
+      </div>
+
+      <div class="exemplo">
+        <h2>Clean CSS CLI</h2>
+        <p>
+          Programa de linha de comando (CLI) utilizado para otimizar o CSS
+          (diminuir o tamanho e concatenar diferentes arquivos em um único).
+        </p>
+        <p><code>clean-css-cli</code></p>
+      </div>
+      <a href="https://www.npmjs.com/package/clean-css-cli" target="_blank" rel="noopener noreferrer">Pacote no npm</a>
+
+      <div class="code-block code-block--js">
+        <div class="code-block__header">
+          <span class="code-block__lang">Bash</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-bash">npm install -g clean-css-cli</code></pre>
+      </div>
+
+      <div class="exemplo">
+        <h2>Uso</h2>
+      </div>
+      <div class="code-block code-block--js">
+        <div class="code-block__header">
+          <span class="code-block__lang">Bash</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-bash">cleancss -o style.min.css style.css</code></pre>
+      </div>
+    </div>
+
+    <div class="conteudo" id="troca-de-tema">
+      <h1>Troca de Tema</h1>
+      <p>Propriedades customizadas e preferência de tema do sistema.</p>
+
+      <div class="exemplo">
+        <h2>Propriedades Customizadas</h2>
+        <p>
+          Também conhecidas como variáveis CSS (custom properties), permitem
+          definirmos valores no CSS que podem ser reutilizados no nosso código.
+        </p>
+        <p>
+          A propriedade é herdada pelos elementos filhos. É comum definirmos as
+          mesmas nos elementos <code>:root</code> ou <code>html</code>, assim
+          teremos acesso à propriedade em todos os elementos do site.
+        </p>
+        <p><code>--roxo: #caf</code> — define uma propriedade customizada.</p>
+        <p><code>var(--roxo)</code> — a função <code>var</code> utiliza uma propriedade customizada.</p>
+      </div>
+      <div class="code-block code-block--css">
+        <div class="code-block__header">
+          <span class="code-block__lang">CSS</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-css">:root {
+  --tamanho-titulo: 3rem;
+  --cor-primaria: #84e;
+}
+
+h1 {
+  font-size: var(--tamanho-titulo);
+  color: var(--cor-primaria);
+}</code></pre>
+      </div>
+
+      <div class="exemplo">
+        <h2>prefers-color-scheme</h2>
+        <p>
+          A <code>@media prefers-color-scheme</code> executa o código CSS
+          conforme a preferência de tema do usuário. Funciona da mesma forma que
+          o media query com <code>max-width</code>, porém em relação ao modo
+          escuro (<code>dark</code>) ou claro (<code>light</code>).
+        </p>
+      </div>
+      <div class="code-block code-block--css">
+        <div class="code-block__header">
+          <span class="code-block__lang">CSS</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-css">:root {
+  --fundo: #fff;
+  --texto: #111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #111;
+    --texto: #fff;
+  }
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+}</code></pre>
+      </div>
+    </div>
+
   </div>
 
 </section>
@@ -609,6 +728,71 @@ a:visited {
     grid-template-rows: 10px auto 10px;
     width: 80px;
     height: 80px;
+  }
+
+  .g-grid--areas {
+    grid-template-areas:
+      "a a a b b"
+      "a a a b b"
+      "c c d b b"
+      "c c e e e"
+      "c c e e e";
+    gap: 8px;
+    width: 220px;
+    height: 180px;
+  }
+
+  .g-cell--area-a,
+  .g-cell--area-b,
+  .g-cell--area-c,
+  .g-cell--area-d,
+  .g-cell--area-e {
+    display: grid;
+    place-items: center;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--b0);
+  }
+
+  .g-cell--area-a {
+    grid-area: a;
+  }
+
+  .g-cell--area-a::before {
+    content: "A";
+  }
+
+  .g-cell--area-b {
+    grid-area: b;
+  }
+
+  .g-cell--area-b::before {
+    content: "B";
+  }
+
+  .g-cell--area-c {
+    grid-area: c;
+  }
+
+  .g-cell--area-c::before {
+    content: "C";
+  }
+
+  .g-cell--area-d {
+    grid-area: d;
+  }
+
+  .g-cell--area-d::before {
+    content: "D";
+  }
+
+  .g-cell--area-e {
+    grid-area: e;
+  }
+
+  .g-cell--area-e::before {
+    content: "E";
   }
 
   .g-grid--row-4 {

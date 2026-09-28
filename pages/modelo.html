@@ -1,0 +1,96 @@
+<!--
+  MODELO DE PÁGINA
+  1. Copie este arquivo e renomeie (ex: figma.html)
+  2. Troque tudo marcado com [TROCAR]
+  3. Adicione links no sidebar e blocos .conteudo conforme precisar
+-->
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html.page-transition-pending {
+      overflow: hidden;
+      height: 100%;
+      filter: blur(12px);
+      opacity: 0
+    }
+  </style>
+  <script>document.documentElement.classList.add("page-transition-pending")</script>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <title>[TROCAR: título]</title>
+</head>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <a href="../index.html" class="header-logo-link">
+        <span class="header-icon">
+          <img src="../imgs/logo.svg" alt="Logo">
+        </span>
+      </a>
+      <div class="header-text">
+        <h1>Material <span class="header-title-muted">de Estudo</span></h1>
+      </div>
+    </div>
+    <a class="botao-voltar" href="../index.html"><span class="icon-voltar"><img src="../icons/arrow-back.svg" alt=""></span>voltar</a>
+  </div>
+</header>
+
+<section class="bg">
+  <div class="capa">
+    <div class="imagem-card">
+      <!-- Imagens: blue.webp | green.webp | orange.webp | yellow.webp -->
+      <img class="card-logo" src="../imgs/[TROCAR].webp" alt="">
+    </div>
+    <!-- Ícones em ../icons/ (css.svg, html.svg, js.svg, vscode.svg, figma.svg, ...) -->
+    <img class="icon-banner" src="../icons/[TROCAR].svg" alt="">
+  </div>
+</section>
+
+<section class="content bg">
+  <div class="sidebar">
+    <h1>Filtros</h1>
+    <nav class="sidebar-nav">
+      <a href="#secao-1">[TROCAR: seção 1]</a>
+      <a href="#secao-2">[TROCAR: seção 2]</a>
+    </nav>
+  </div>
+
+  <div class="conteudo-area">
+
+    <div class="conteudo" id="secao-1">
+      <h1>[TROCAR: título da seção]</h1>
+      <p>[TROCAR: descrição]</p>
+
+      <div class="exemplo">
+        <h2>[TROCAR: subtítulo]</h2>
+        <div class="caixa-exemplo">
+          <!-- conteúdo do exemplo -->
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo" id="secao-2">
+      <h1>[TROCAR: título da seção]</h1>
+      <p>[TROCAR: descrição]</p>
+
+      <!-- Exemplo de bloco de código (opcional) -->
+      <div class="code-block code-block--css">
+        <div class="code-block__header">
+          <span class="code-block__lang">CSS</span>
+        </div>
+        <pre class="code-block__pre"><code class="language-css">/* código aqui */</code></pre>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="../js/page-transition.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<script src="../js/code.js"></script>
+
+</html>
