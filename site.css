@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=Sofia+Sans+Extra+Condensed:wght@400&display=swap");
 @import url("estilos-page-principal/tokens.css");
 @import url("estilos-page-principal/base.css");
 @import url("estilos-page-principal/chrome.css");
+@import url("estilos-page-principal/fab.css");
 @import url("estilos-page-principal/hero.css");
 @import url("estilos-page-principal/sections.css");
 @import url("estilos-page-principal/projetos.css");

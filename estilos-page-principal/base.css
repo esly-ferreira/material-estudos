@@ -154,7 +154,7 @@ button:focus-visible,
 
 .surface-corner {
   position: relative;
-  border-radius: 32px 0 32px 32px;
+  border-radius: 32px;
 }
 
 .det-sup-dir {
