@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=Sofia+Sans+Extra+Condensed:wght@400&display=swap" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="../site.css" media="print" onload="this.media='all'">
   <link rel="icon" href="../favicon.ico" type="image/x-icon">
-  <title>css</title>
+  <title>CSS</title>
 </head>
 <div id="page-loader" class="page-loader" role="status" aria-live="polite" aria-busy="true" aria-label="Carregando o site" style="background:#101114">
   <div class="page-loader-inner">
@@ -95,6 +95,11 @@
         <a class="filtro-btn" href="#grid">Display grid</a>
         <a class="filtro-btn" href="#pseudo-classes">Pseudo-classes</a>
         <a class="filtro-btn" href="#seletores">Seletores</a>
+        <a class="filtro-btn" href="#seletores-modernos">Seletores modernos</a>
+        <a class="filtro-btn" href="#aspect-ratio">Aspect ratio</a>
+        <a class="filtro-btn" href="#content-visibility">Content visibility</a>
+        <a class="filtro-btn" href="#transition">Transition</a>
+        <a class="filtro-btn" href="#movimento">Movimento</a>
         <a class="filtro-btn" href="#clean-css">Clean CSS</a>
         <a class="filtro-btn" href="#troca-de-tema">Troca de tema</a>
       </nav>
@@ -491,6 +496,350 @@ a:visited {
             </div>
             <pre class="code-block__pre"><code class="language-css">.lista-6 li:not(:last-child) {
   border-bottom: 2px solid #217;
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="conteudo" id="seletores-modernos">
+          <h1>Seletores modernos</h1>
+          <p>Seletores modernos são regras do CSS que funcionam como filtros avançados. Um seletor é a mira que aponta para um elemento HTML e aplica um estilo, como cor ou tamanho.</p>
+          <p>Eles permitem regras complexas que antes exigiam código repetido ou JavaScript.</p>
+
+          <div class="exemplo">
+            <h2>:is() e :where()</h2>
+            <p>Encurtam o código quando o mesmo estilo vale para vários lugares. A diferença: o <code>:where()</code> não tem peso (especificidade), então é mais fácil sobrescrever depois.</p>
+            <div class="caixa-exemplo mod-demo">
+              <div>
+                <p class="pse-nth-label">:is()</p>
+                <div class="mod-is">
+                  <header><p>header</p></header>
+                  <main><p>main</p></main>
+                  <footer><p>footer</p></footer>
+                </div>
+              </div>
+              <div>
+                <p class="pse-nth-label">:where() sobrescrito no banner</p>
+                <div class="mod-where">
+                  <div class="mod-card"><a href="#seletores-modernos">card</a></div>
+                  <div class="mod-banner"><a href="#seletores-modernos">banner</a></div>
+                  <div class="mod-sidebar"><a href="#seletores-modernos">sidebar</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exemplo">
+            <h2>:has()</h2>
+            <p>O <code>:has()</code> funciona como uma regra de condição visual. Ele é conhecido como o seletor de pai.</p>
+            <p>Imagine várias caixas, os elementos pai. O <code>:has()</code> olha o conteúdo de cada caixa e cria a regra: se esta caixa tiver um item específico dentro dela, o elemento filho, mude a cor de fora da caixa.</p>
+            <p>Antes, o CSS só agia em uma direção: alterar o item de dentro a partir da caixa de fora. O caminho inverso exigia JavaScript. Agora o CSS faz isso sozinho.</p>
+            <div class="caixa-exemplo">
+              <div class="mod-cartao">
+                <h3>Aviso comum</h3>
+                <p>Este é um aviso sem urgência.</p>
+              </div>
+              <div class="mod-cartao">
+                <h3>Aviso crítico</h3>
+                <span class="mod-erro">Falha no sistema!</span>
+                <p>Este cartão possui um alerta de erro.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="code-block code-block--html">
+            <div class="code-block__header">
+              <span class="code-block__lang">HTML</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-html">&lt;!-- Cartão normal --&gt;
+&lt;div class="cartao"&gt;
+  &lt;h2&gt;Aviso comum&lt;/h2&gt;
+  &lt;p&gt;Este é um aviso sem urgência.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- Cartão de erro --&gt;
+&lt;div class="cartao"&gt;
+  &lt;h2&gt;Aviso crítico&lt;/h2&gt;
+  &lt;span class="erro"&gt;Falha no sistema!&lt;/span&gt;
+  &lt;p&gt;Este cartão possui um alerta de erro.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+
+          <div class="code-block code-block--css">
+            <div class="code-block__header">
+              <span class="code-block__lang">CSS</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-css">/* CSS base para todos os cartões (tema escuro) */
+.cartao {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* A div.cartao que tiver .erro dentro ganha borda vermelha */
+.cartao:has(.erro) {
+  border: 2px solid #ff4444;
+}</code></pre>
+          </div>
+
+          <div class="exemplo">
+            <h2>:not()</h2>
+            <p>Aplica o estilo a todos os elementos, exceto o que você especificar.</p>
+            <div class="caixa-exemplo">
+              <ul class="mod-not">
+                <li>Item 1</li>
+                <li class="ativo">Ativo</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="code-block code-block--css">
+            <div class="code-block__header">
+              <span class="code-block__lang">CSS</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-css">/* --- 1. :is() --- */
+/* Jeito antigo, repetitivo: */
+header p, main p, footer p { color: #ccc; }
+
+/* Jeito moderno: */
+:is(header, main, footer) p {
+  color: #ccc;
+}
+
+/* --- 2. :where() --- */
+/* Aplica o estilo, mas permite que seja facilmente sobrescrito */
+:where(.card, .banner, .sidebar) a {
+  text-decoration: none;
+}
+
+/* --- 3. :has() --- */
+/* A .cartao que tiver .erro dentro ganha borda vermelha */
+.cartao:has(.erro) {
+  border: 2px solid #ff4444;
+}
+
+/* --- 4. :not() --- */
+/* Opacidade em todos os itens, menos o .ativo */
+li:not(.ativo) {
+  opacity: 0.5;
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="conteudo" id="aspect-ratio">
+          <h1>Aspect ratio</h1>
+          <p>O <code>aspect-ratio</code> define a proporção entre a largura e a altura de um elemento. Ele funciona como uma moldura fixa para quadros ou telas.</p>
+          <p>Se a moldura é retangular e a largura aumenta, o navegador calcula a altura sozinho para manter o formato. Antes, era preciso calcular a altura na mão para vídeo e imagem não amassarem em telas diferentes.</p>
+
+          <div class="exemplo">
+            <h2>16 / 9 e 1 / 1</h2>
+            <div class="caixa-exemplo">
+              <div class="mod-video"></div>
+              <img class="mod-avatar" src="../imgs/blue.webp" alt="Avatar">
+            </div>
+          </div>
+
+          <div class="code-block code-block--html">
+            <div class="code-block__header">
+              <span class="code-block__lang">HTML</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-html">&lt;div class="video"&gt;&lt;/div&gt;
+&lt;img class="avatar" src="perfil.jpg" alt="Avatar"&gt;</code></pre>
+          </div>
+
+          <div class="code-block code-block--css">
+            <div class="code-block__header">
+              <span class="code-block__lang">CSS</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-css">.video {
+  width: 100%;
+  /* 16 de largura para 9 de altura: proporção de vídeo */
+  aspect-ratio: 16 / 9;
+  background-color: #2a2a2a;
+}
+
+.avatar {
+  width: 150px;
+  /* quadrado perfeito */
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover; /* preenche a moldura sem deformar */
+}</code></pre>
+          </div>
+
+          <p>Deixar o CSS calcular a altura torna o layout responsivo mais rápido e o código mais limpo.</p>
+        </div>
+
+        <div class="conteudo" id="content-visibility">
+          <h1>Content visibility</h1>
+          <p>O <code>content-visibility</code> é uma ferramenta de performance. Ele funciona como um modo soneca para partes do código.</p>
+          <p>Em vez de o navegador desenhar a página inteira de uma vez, a regra avisa: só processe essa seção quando o usuário rolar e chegar perto dela.</p>
+
+          <div class="exemplo">
+            <h2>O problema</h2>
+            <p>Em páginas muito longas, o carregamento inicial fica lento e pode travar o aparelho. Com essa regra, o navegador ignora a matemática visual do que está fora da tela, e o começo da página aparece quase na hora.</p>
+          </div>
+
+          <div class="exemplo">
+            <h2>contain-intrinsic-size</h2>
+            <p>Se o navegador não desenha o elemento, a altura dele vira zero. Quando a seção entra na tela, a barra de rolagem salta. O <code>contain-intrinsic-size</code> reserva um tamanho aproximado antes do conteúdo ser processado.</p>
+            <div class="caixa-exemplo">
+              <section class="mod-secao-pesada">
+                <h3>Muitos dados aqui</h3>
+                <p>Esta caixa só é desenhada quando chega perto da tela. A reserva de altura evita o salto da rolagem.</p>
+              </section>
+            </div>
+          </div>
+
+          <div class="code-block code-block--html">
+            <div class="code-block__header">
+              <span class="code-block__lang">HTML</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-html">&lt;!-- Seção pesada: rodapé complexo ou lista de comentários --&gt;
+&lt;section class="secao-pesada"&gt;
+  &lt;h2&gt;Muitos dados aqui&lt;/h2&gt;
+  &lt;!-- Centenas de elementos HTML --&gt;
+&lt;/section&gt;</code></pre>
+          </div>
+
+          <div class="code-block code-block--css">
+            <div class="code-block__header">
+              <span class="code-block__lang">CSS</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-css">.secao-pesada {
+  /* renderiza só quando chega perto da tela */
+  content-visibility: auto;
+
+  /* reserva 800px para a rolagem não pular */
+  contain-intrinsic-size: 800px;
+
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="conteudo" id="transition">
+          <h1>Transition</h1>
+          <p>O <code>transition</code> controla a velocidade e a suavidade de uma mudança visual. Em vez de um corte seco, ele anima o caminho entre um estado e outro.</p>
+          <p>Sem ele, a lâmpada liga e desliga de uma vez. Com ele, o interruptor vira um dimmer: a luz acende e apaga aos poucos.</p>
+
+          <div class="exemplo">
+            <h2>O que declarar</h2>
+            <p>A regra fica no estado original do elemento. Ela define o que muda, quanto tempo dura e o ritmo.</p>
+            <p><code>background-color</code>, <code>transform</code> ou <code>all</code> escolhem a propriedade. <code>0.3s</code> é a duração. <code>ease</code> começa rápido e termina devagar; <code>linear</code> mantém a velocidade constante.</p>
+            <div class="caixa-exemplo">
+              <button class="mod-botao-turbo" type="button">Adicionar ao Carrinho</button>
+            </div>
+          </div>
+
+          <div class="code-block code-block--html">
+            <div class="code-block__header">
+              <span class="code-block__lang">HTML</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-html">&lt;button class="botao-turbo"&gt;Adicionar ao Carrinho&lt;/button&gt;</code></pre>
+          </div>
+
+          <div class="code-block code-block--css">
+            <div class="code-block__header">
+              <span class="code-block__lang">CSS</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-css">.botao-turbo {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 15px 30px;
+  font-size: 16px;
+  cursor: pointer;
+
+  /* qualquer mudança demora 0.3s em ritmo suave */
+  transition: all 0.3s ease;
+}
+
+.botao-turbo:hover {
+  background-color: #333;
+  border-color: #666;
+  transform: scale(1.05);
+}</code></pre>
+          </div>
+        </div>
+
+        <div class="conteudo" id="movimento">
+          <h1>Movimento</h1>
+          <p>Transform, animation e view transition ditam como as coisas se movem e mudam de formato. Cada um resolve um tipo diferente de mudança.</p>
+
+          <div class="exemplo">
+            <h2>Transform</h2>
+            <p>Altera a geometria: mover, girar, crescer ou encolher, sem empurrar o que está ao redor. Sozinho ele só troca o estado. Junto com <code>transition</code>, a troca fica suave.</p>
+            <div class="caixa-exemplo mod-movimento">
+              <div class="mod-caixa-transform">Passe o mouse</div>
+            </div>
+          </div>
+
+          <div class="exemplo">
+            <h2>Animation</h2>
+            <p>O <code>transition</code> só vai do ponto A ao B, em geral no hover. O <code>animation</code> monta um filme com vários passos, sozinho e em loop, usando <code>@keyframes</code> como linha do tempo.</p>
+            <div class="caixa-exemplo mod-movimento">
+              <div class="mod-caixa-animada">Atenção</div>
+            </div>
+          </div>
+
+          <div class="exemplo">
+            <h2>View transition</h2>
+            <p>Cria uma passagem suave entre telas ou grandes partes do layout. O navegador fotografa a tela antiga e a nova e interpola as duas. Antes, isso pedia bibliotecas de JavaScript.</p>
+            <p>O <code>view-transition-name</code> marca o elemento. Quando o estado muda, essa imagem vai da posição antiga para a nova sem corte seco.</p>
+            <div class="caixa-exemplo">
+              <img class="mod-imagem-destaque" src="../imgs/blue.webp" alt="Carro">
+              <button class="mod-vt-btn" type="button">Trocar de tamanho</button>
+            </div>
+          </div>
+
+          <div class="code-block code-block--html">
+            <div class="code-block__header">
+              <span class="code-block__lang">HTML</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-html">&lt;div class="caixa-transform"&gt;Passe o mouse&lt;/div&gt;
+&lt;div class="caixa-animada"&gt;Atenção&lt;/div&gt;
+&lt;img class="imagem-destaque" src="carro.jpg" alt="Carro"&gt;</code></pre>
+          </div>
+
+          <div class="code-block code-block--css">
+            <div class="code-block__header">
+              <span class="code-block__lang">CSS</span>
+            </div>
+            <pre class="code-block__pre"><code class="language-css">/* --- 1. Transforms --- */
+.caixa-transform {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 20px;
+  width: 150px;
+  transition: transform 0.3s ease;
+}
+
+.caixa-transform:hover {
+  transform: translateY(-10px) scale(1.1);
+}
+
+/* --- 2. Animations --- */
+.caixa-animada {
+  background-color: #ff4444;
+  padding: 20px;
+  width: 150px;
+  animation: pulso 2s infinite;
+}
+
+@keyframes pulso {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- 3. View Transitions --- */
+.imagem-destaque {
+  view-transition-name: transicao-carro-principal;
 }</code></pre>
           </div>
         </div>
@@ -1108,7 +1457,245 @@ body {
     color: var(--b3);
     margin-bottom: 8px;
   }
+
+  .mod-demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .mod-is header,
+  .mod-is main,
+  .mod-is footer {
+    padding: 0.35rem 0.75rem;
+    margin-bottom: 0.35rem;
+    border-radius: 8px;
+    background: #121212;
+  }
+
+  .mod-is :is(header, main, footer) p {
+    margin: 0;
+    color: #ccc;
+  }
+
+  .mod-where {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .mod-card,
+  .mod-banner,
+  .mod-sidebar {
+    padding: 0.65rem 0.9rem;
+    border-radius: 8px;
+    background: #eee;
+  }
+
+  :where(.mod-card, .mod-banner, .mod-sidebar) a {
+    text-decoration: none;
+    color: #217;
+    font-weight: 600;
+  }
+
+  .mod-banner a {
+    color: #435210;
+  }
+
+  .mod-cartao {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+    border-radius: 12px;
+  }
+
+  .mod-cartao:last-child {
+    margin-bottom: 0;
+  }
+
+  .mod-cartao h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+    color: #fff;
+  }
+
+  .mod-cartao p {
+    margin: 0;
+    color: #fff;
+  }
+
+  .mod-erro {
+    display: inline-block;
+    margin-bottom: 0.45rem;
+    color: #ff4444;
+    font-weight: 600;
+  }
+
+  .mod-cartao:has(.mod-erro) {
+    border: 2px solid #ff4444;
+  }
+
+  .mod-not {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 280px;
+  }
+
+  .mod-not li {
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    background: #caf;
+    color: #217;
+  }
+
+  .mod-not li:not(.ativo) {
+    opacity: 0.5;
+  }
+
+  .mod-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .mod-avatar {
+    width: 150px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .mod-secao-pesada {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 140px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #ccc;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .mod-secao-pesada h3 {
+    margin: 0 0 0.4rem;
+    color: #fff;
+    font-size: 1.05rem;
+  }
+
+  .mod-secao-pesada p {
+    margin: 0;
+    color: #ccc;
+  }
+
+  .mod-botao-turbo {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .mod-botao-turbo:hover {
+    background-color: #333;
+    border-color: #666;
+    transform: scale(1.05);
+  }
+
+  .mod-movimento {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .mod-caixa-transform {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 20px;
+    width: 150px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .mod-caixa-transform:hover {
+    transform: translateY(-10px) scale(1.1);
+  }
+
+  .mod-caixa-animada {
+    background-color: #ff4444;
+    color: #fff;
+    padding: 20px;
+    width: 150px;
+    border-radius: 12px;
+    animation: mod-pulso 2s infinite;
+  }
+
+  @keyframes mod-pulso {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .mod-imagem-destaque {
+    view-transition-name: transicao-carro-principal;
+    width: 160px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .mod-imagem-destaque.is-grande {
+    width: 100%;
+    height: 180px;
+  }
+
+  .mod-vt-btn {
+    background: transparent;
+    color: var(--b2);
+    border: 1px solid color-mix(in srgb, var(--b2) 28%, transparent);
+    border-radius: 100px;
+    padding: 0.5rem 1rem;
+    font: inherit;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mod-caixa-transform,
+    .mod-caixa-animada {
+      animation: none;
+      transition: none;
+    }
+  }
 </style>
+<script>
+  document.querySelector(".mod-vt-btn")?.addEventListener("click", () => {
+    const img = document.querySelector(".mod-imagem-destaque");
+    if (!img) return;
+    const run = () => img.classList.toggle("is-grande");
+    if (document.startViewTransition && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.startViewTransition(run);
+    } else {
+      run();
+    }
+  });
+</script>
 <div class="fab" data-fab>
   <ul class="fab-panel" id="fab-menu" aria-hidden="true">
     <li>
